@@ -616,6 +616,15 @@
     transform: scale(0.95);
   }
 
+  .load-more {
+    text-align: center;
+  }
+
+  .load-more .kid-link {
+    border: 0;
+    cursor: pointer;
+  }
+
   @media (max-width: 600px) {
     .site-header .site-title { font-size: 2.2rem; }
     .page-title { font-size: 2rem; }
@@ -702,5 +711,176 @@
   .button {
     transition: none;
     transform: none !important;
+  }
+}
+
+/* Ellie the side mascot (see app/javascript/controllers/mascot_controller.js).
+   Hidden, along with the 💡 markers, until JS activates her on devices that can hover. */
+.mascot {
+  display: none;
+}
+
+.mascot-active .mascot {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 24px;
+  z-index: 900;
+  width: 88px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.mascot.is-ready {
+  transition: transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+
+.mascot__body {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.2));
+  transform-origin: 50% 100%;
+  animation: mascot-bob 3s ease-in-out infinite;
+}
+
+.mascot.is-walking .mascot__body {
+  animation: mascot-walk 0.35s ease-in-out infinite;
+}
+
+.mascot__ear,
+.mascot__trunk {
+  transform-box: fill-box;
+}
+
+.mascot__ear--left { transform-origin: 100% 50%; }
+.mascot__ear--right { transform-origin: 0% 50%; }
+.mascot__trunk { transform-origin: 50% 0%; }
+
+.mascot.is-talking .mascot__ear--left { animation: mascot-flap-left 0.5s ease-in-out infinite alternate; }
+.mascot.is-talking .mascot__ear--right { animation: mascot-flap-right 0.5s ease-in-out infinite alternate; }
+.mascot.is-talking .mascot__trunk { animation: mascot-trunk 0.8s ease-in-out infinite alternate; }
+
+.mascot__bubble {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 14px);
+  width: 250px;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-forest);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-hover);
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  transform-origin: 80% 100%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Speech bubble tail pointing down at Ellie */
+.mascot__bubble::after {
+  content: "";
+  position: absolute;
+  right: 36px;
+  bottom: -9px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-surface);
+  border-right: 2px solid var(--color-forest);
+  border-bottom: 2px solid var(--color-forest);
+  transform: rotate(45deg);
+}
+
+.mascot.is-talking .mascot__bubble {
+  opacity: 1;
+  transform: none;
+}
+
+.mascot__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.mascot__text {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* Blocks with a bonus fact get a 💡 marker and an outline while Ellie talks about them */
+.mascot-active [data-mascot-fact] {
+  position: relative;
+}
+
+.mascot-active [data-mascot-fact]::after {
+  content: "💡";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 0.9rem;
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Ellie reads these out instead, so only print them where she isn't shown */
+.mascot-active .kid-real {
+  display: none;
+}
+
+.mascot-active .fact-list li[data-mascot-fact] {
+  padding-right: 2rem;
+}
+
+.mascot-active [data-mascot-fact].is-mascot-target {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 3px;
+}
+
+.mascot-active [data-mascot-fact].is-mascot-target::after {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes mascot-walk {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-3px); }
+}
+
+@keyframes mascot-flap-left {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-10deg); }
+}
+
+@keyframes mascot-flap-right {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(10deg); }
+}
+
+@keyframes mascot-trunk {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot.is-ready,
+  .mascot__bubble {
+    transition: none;
+  }
+
+  .mascot__body,
+  .mascot.is-talking .mascot__ear--left,
+  .mascot.is-talking .mascot__ear--right,
+  .mascot.is-talking .mascot__trunk {
+    animation: none;
   }
 }

@@ -3,7 +3,7 @@
       intro: "Elephants are stars! You can find them in books, cartoons and movies. Meet some famous elephants, " \
              "then find out what real elephants can do." %>
 
-<div class="section kids">
+<div class="section kids" data-controller="load-more" data-load-more-per-page-value="3">
   <span class="section-label">Famous elephants</span>
   <div class="kid-grid">
     <% [
@@ -35,16 +35,23 @@
        "Manny is a woolly mammoth. He is big, grumpy on the outside and kind on the inside.",
        "Mammoths are elephant cousins that lived long ago. They had thick hairy coats to stay warm.",
        "Learn about elephant cousins", classification_path]
-    ].each do |name, picture, colour, from, story, real_fact, link_label, path| %>
-      <div class="kid-card <%= colour %>">
+    ].each_with_index do |(name, picture, colour, from, story, real_fact, link_label, path), index| %>
+      <div class="kid-card <%= colour %>" data-load-more-target="item" <%= "hidden" if index >= 3 %>
+           data-mascot-label="Real elephant fact" data-mascot-fact="<%= real_fact %>">
         <div class="kid-picture" role="img" aria-label="Picture of <%= name %>"><%= picture %></div>
         <h3><%= name %></h3>
         <span class="kid-from"><%= from %></span>
         <p><%= story %></p>
+        <%# Ellie pops this fact up on hover; the printed copy is only shown where she can't (touch devices) %>
         <p class="kid-real"><strong>Real elephant fact:</strong> <%= real_fact %></p>
         <%= link_to "#{link_label} →", path, class: "kid-link" %>
       </div>
     <% end %>
+  </div>
+  <div class="load-more">
+    <button type="button" class="kid-link" data-load-more-target="button" data-action="load-more#more">
+      Show more elephants 🐘
+    </button>
   </div>
 </div>
 

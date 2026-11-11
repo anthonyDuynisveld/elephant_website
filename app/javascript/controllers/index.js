@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import ElephantCursorController from "./elephant_cursor_controller"
 application.register("elephant-cursor", ElephantCursorController)
+
+import MascotController from "./mascot_controller"
+application.register("mascot", MascotController)
+
+import LoadMoreController from "./load_more_controller"
+application.register("load-more", LoadMoreController)
