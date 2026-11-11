@@ -449,6 +449,11 @@
     height: 220px;
   }
 
+  .gallery-item .gallery-media {
+    height: 220px;
+    overflow: hidden;
+  }
+
   .gallery-item .gallery-video {
     display: block;
     width: 100%;

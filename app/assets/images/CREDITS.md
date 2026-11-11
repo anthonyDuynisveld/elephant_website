@@ -7,7 +7,7 @@
 | trunk-at-work.jpg | Asiatic-Elephant trunk.jpg | CC0 |
 | mud-bath.jpg | Female African Elephant Taking Mud Bath 2019-07-23.jpg | CC BY-SA 4.0 |
 | asian-elephant-forest.jpg | Asian Elephant in the Forest.jpg | CC0 |
-| watering-hole.jpg | Baby Elephants Drinking at Waterhole 2019-07-23.jpg | CC BY-SA 4.0 |
+| watering-hole.jpg | Elephants at the watering hole.jpg | CC BY-SA 4.0 |
 
 Find each file at https://commons.wikimedia.org/wiki/File:<Source file name> for author attribution.
 

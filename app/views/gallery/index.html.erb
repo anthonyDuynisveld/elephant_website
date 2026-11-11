@@ -12,7 +12,9 @@
         <%= video_tag photo.video_path, poster: photo.poster_path, muted: true, loop: true, playsinline: true,
               preload: "metadata", class: "gallery-video", data: { hover_video_target: "video" } %>
       <% elsif photo.poster_path %>
-        <%= image_tag photo.poster_path, alt: photo.title, loading: "lazy", class: "gallery-video" %>
+        <div class="gallery-media">
+          <%= image_tag photo.poster_path, alt: photo.title, loading: "lazy", class: "gallery-video", style: photo.tile_image_style %>
+        </div>
       <% else %>
         <%= render "shared/image_placeholder" %>
       <% end %>
