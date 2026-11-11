@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ElephantCursorController from "./elephant_cursor_controller"
+application.register("elephant-cursor", ElephantCursorController)

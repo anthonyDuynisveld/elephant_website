@@ -1,0 +1,23 @@
+<%# Custom elephant cursor. Positioned and animated by elephant_cursor_controller.js.
+    Elephant faces left; the trunk hangs down at rest and swings up (pivoting at
+    its base) to spray water while the mouse button is held. %>
+<div class="elephant-cursor" data-elephant-cursor-target="cursor" aria-hidden="true">
+  <svg viewBox="0 0 64 64" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+    <!-- legs -->
+    <rect x="28" y="42" width="7" height="14" rx="3" fill="#7d838a"/>
+    <rect x="47" y="42" width="7" height="14" rx="3" fill="#7d838a"/>
+    <!-- tail -->
+    <path d="M57 30 C61 33 61 39 59 43" fill="none" stroke="#7d838a" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- body -->
+    <ellipse cx="42" cy="34" rx="17" ry="14" fill="#9aa0a6"/>
+    <!-- trunk (pivots at its base on the face) -->
+    <g class="elephant-cursor__trunk">
+      <path d="M13 29 C7 31 6 41 8 50" fill="none" stroke="#9aa0a6" stroke-width="6.5" stroke-linecap="round"/>
+    </g>
+    <!-- head, ear, tusk, eye -->
+    <circle cx="23" cy="28" r="11" fill="#9aa0a6"/>
+    <path d="M14 36 C11 39 11 43 14 45" fill="none" stroke="#fdf6e3" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="31" cy="28" rx="7" ry="10" fill="#868c93"/>
+    <circle cx="19" cy="25" r="1.6" fill="#1a1a1a"/>
+  </svg>
+</div>

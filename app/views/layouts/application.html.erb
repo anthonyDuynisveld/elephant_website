@@ -27,7 +27,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col" data-controller="elephant-cursor">
+    <%= render "layouts/elephant_cursor" %>
+
     <header class="site-header">
       <p class="site-title"><%= link_to "The Elephant", root_path %></p>
       <p class="tagline">The world's largest land animal</p>
