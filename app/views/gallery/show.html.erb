@@ -1,6 +1,6 @@
 <% content_for :title, @photo.title %>
 
-<%= link_to "← Back to gallery", gallery_index_path, class: "text-link" %>
+<%= link_to "← Back to all photos", gallery_index_path, class: "text-link" %>
 
 <figure class="photo-block">
   <%= render "shared/image_placeholder" %>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="highlight-box">
-  <p><strong>Got a great elephant photo?</strong> <%= link_to "Share it with us", gallery_index_path(anchor: "submit"), class: "text-link" %>.</p>
+  <p><strong>Got a great elephant photo?</strong> <%= link_to "Find out how a grown-up can share it", gallery_index_path(anchor: "submit"), class: "text-link" %>.</p>
 </div>
 
 <nav class="pager">

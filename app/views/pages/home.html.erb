@@ -1,53 +1,61 @@
 <div class="hero-image">
-  <%= render "shared/image_placeholder", label: "Elephant photo coming soon" %>
+  <%= render "shared/image_placeholder", label: "Elephant picture coming soon" %>
 </div>
 
 <div class="section">
-  <h1 class="page-title">Welcome</h1>
+  <h1 class="page-title">Hi, elephant explorer!</h1>
   <p class="page-subtitle">
-    This site is all about elephants, the largest land animals on Earth. Learn where they live, how they're
-    classified, what they eat, how their bodies work and how they behave. Then browse the gallery and share your own photos.
+    Are you doing a school project about elephants? You're in the right place! Here you'll find facts and pictures
+    to help you make a great poster, presentation or report.
   </p>
 </div>
 
 <div class="section">
-  <span class="section-label">Explore</span>
+  <span class="section-label">Pick a topic</span>
   <div class="card-grid">
     <% [
-      ["Habitat", habitat_path, "Where on Earth elephants live and what they need to thrive."],
-      ["Classification", classification_path, "Scientific names, species and subspecies."],
-      ["Image Gallery", gallery_index_path, "Photos of elephants, plus a place to submit your own."],
-      ["Diet", diet_path, "What elephants eat, how often, and how much."],
-      ["Anatomy & Biology", anatomy_path, "Trunks, tusks, size, lifespan and how elephants breathe."],
-      ["Behavior", behavior_path, "Finding food, staying safe from predators and sleeping."],
-      ["Pop Culture", pop_culture_path, "Famous elephants from books and movies, made for kids."]
-    ].each do |title, path, blurb| %>
+      ["🌍", "Where They Live", habitat_path, "Find out which parts of the world elephants call home."],
+      ["🌳", "Family Tree", classification_path, "Meet the three kinds of elephants and their cousins, the mammoths."],
+      ["📷", "Photos", gallery_index_path, "Look at pictures of elephants in the wild."],
+      ["🍃", "Food", diet_path, "What do elephants eat? (Hint: a LOT of plants!)"],
+      ["🐘", "Bodies", anatomy_path, "Trunks, tusks, giant ears and more."],
+      ["💤", "What They Do", behavior_path, "How elephants find food, stay safe and sleep."],
+      ["⭐", "Famous Elephants", pop_culture_path, "Dumbo, Babar, Elmer and other elephant stars."]
+    ].each do |icon, title, path, blurb| %>
       <div class="card">
+        <div class="card-icon" aria-hidden="true"><%= icon %></div>
         <h3><%= title %></h3>
         <p><%= blurb %></p>
-        <%= link_to "Learn more →", path, class: "card-link" %>
+        <%= link_to "Let's go →", path, class: "card-link", aria: { label: "Let's go to #{title}" } %>
       </div>
     <% end %>
   </div>
 </div>
 
 <div class="section">
-  <span class="section-label">Quick facts</span>
+  <span class="section-label">Wow facts</span>
   <div class="stat-row">
     <div class="stat-card">
-      <div class="stat-label">Weight</div>
+      <div class="stat-label">How heavy?</div>
       <div class="stat-value">6,000 kg</div>
-      <p>Weight of an adult African savanna bull elephant.</p>
+      <p>A big male African elephant weighs about as much as 4 cars!</p>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Lifespan</div>
+      <div class="stat-label">How old?</div>
       <div class="stat-value">60–70 years</div>
-      <p>Typical lifespan in the wild.</p>
+      <p>Wild elephants can live to be as old as your grandparents.</p>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Trunk</div>
-      <div class="stat-value">~40,000</div>
-      <p>Muscle bundles in an elephant's trunk.</p>
+      <div class="stat-label">Trunk muscles</div>
+      <div class="stat-value">40,000</div>
+      <p>Tiny muscle groups in one trunk. Your whole body has about 600 muscles!</p>
     </div>
   </div>
+</div>
+
+<div class="highlight-box">
+  <p>
+    <strong>Project tip:</strong> Pick one topic. Write down 3 facts you like. Then explain them in your own words,
+    and add a picture to show what you mean.
+  </p>
 </div>

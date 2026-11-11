@@ -1,18 +1,27 @@
 <%= render "shared/page_header",
-      title: "Scientific Name & Classification",
-      intro: "Elephants belong to the family Elephantidae, the last surviving family of the order Proboscidea, which also included mammoths and mastodons." %>
+      title: "Elephant Family Tree",
+      intro: "Scientists sort living things into groups, a bit like sorting toys into boxes. This is called classification. " \
+             "Let's find out where elephants fit!" %>
 
 <div class="section">
-  <h2>Scientific classification</h2>
+  <h2>How scientists sort elephants</h2>
+  <p>Each group is smaller than the one before it. Scientists give every group a Latin name.</p>
   <table class="data-table">
+    <thead>
+      <tr>
+        <th>Group</th>
+        <th>Science name</th>
+        <th>What it means</th>
+      </tr>
+    </thead>
     <tbody>
       <% [
-        ["Kingdom", "Animalia", "Animals"],
-        ["Phylum", "Chordata", "Animals with a spinal cord"],
-        ["Class", "Mammalia", "Mammals"],
-        ["Order", "Proboscidea", "Mammals with a trunk (proboscis)"],
-        ["Family", "Elephantidae", "Elephants and their extinct relatives, such as mammoths"],
-        ["Genera", "Loxodonta and Elephas", "African elephants and Asian elephants"]
+        ["Kingdom", "Animalia", "All animals"],
+        ["Phylum", "Chordata", "Animals with a spinal cord (a bundle of nerves down the back), like fish, birds and you"],
+        ["Class", "Mammalia", "Mammals: animals with hair that feed their babies milk"],
+        ["Order", "Proboscidea", "Animals with a trunk"],
+        ["Family", "Elephantidae", "Elephants and mammoths"],
+        ["Genus", "Loxodonta and Elephas", "African elephants and Asian elephants"]
       ].each do |rank, name, meaning| %>
         <tr>
           <th><%= rank %></th>
@@ -25,65 +34,74 @@
 </div>
 
 <div class="section">
-  <h2>Primary species</h2>
-  <p>There are three living species of elephant.</p>
+  <h2>Three kinds of elephants</h2>
+  <p>
+    There are three species (kinds) of elephant alive today. All three are <strong>endangered</strong>. That means so few
+    are left that they could disappear forever.
+  </p>
   <div class="card-grid">
     <div class="card">
       <span class="section-label"><em>Loxodonta africana</em></span>
       <h3>African savanna elephant</h3>
       <p>
-        The largest land animal alive. Has huge ears shaped like the African continent, and both males and females grow tusks. Listed as Endangered.
+        The biggest animal on land! Its huge ears are shaped a bit like a map of Africa. Males and females both grow tusks.
       </p>
     </div>
     <div class="card">
       <span class="section-label"><em>Loxodonta cyclotis</em></span>
       <h3>African forest elephant</h3>
       <p>
-        Smaller, with rounder ears and straighter, downward-pointing tusks suited to dense forest.
-        Recognised as a separate species in 2021. Listed as Critically Endangered.
+        Smaller, with rounder ears and straight tusks that point down. This helps it squeeze through thick forest.
+        It was only listed as its own species in 2021, and it's in the most danger of all.
       </p>
     </div>
     <div class="card">
       <span class="section-label"><em>Elephas maximus</em></span>
       <h3>Asian elephant</h3>
       <p>
-        Smaller ears, a rounded or humped back and a two-domed head. Females usually have no tusks, and many males don't either. Listed as Endangered.
+        Smaller ears, a rounded back and two bumps on top of its head. Most females have no tusks, and many males don't either.
       </p>
     </div>
   </div>
 </div>
 
 <div class="section">
-  <h2>Subspecies</h2>
-  <p>African elephants have no officially recognised subspecies. The Asian elephant is commonly divided into these subspecies:</p>
+  <h2>Kinds of Asian elephant</h2>
+  <p>
+    Scientists split Asian elephants into smaller groups called subspecies. Each one lives in a different place.
+    (African elephants aren't split up like this.)
+  </p>
   <ul class="fact-list">
     <li>
       <span class="fact-label">Indian elephant<br><em class="font-normal">E. m. indicus</em></span>
-      <span class="fact-value">Mainland Asia, from India and Nepal to Vietnam and the Malay Peninsula. The most widespread subspecies.</span>
+      <span class="fact-value">Lives in the most places, from India and Nepal all the way to Vietnam and Malaysia.</span>
     </li>
     <li>
       <span class="fact-label">Sri Lankan elephant<br><em class="font-normal">E. m. maximus</em></span>
-      <span class="fact-value">The largest Asian subspecies, often with patches of pale, depigmented skin on the face and ears.</span>
+      <span class="fact-value">The biggest Asian elephants. Many have pink, freckly patches on their face and ears.</span>
     </li>
     <li>
       <span class="fact-label">Sumatran elephant<br><em class="font-normal">E. m. sumatranus</em></span>
-      <span class="fact-value">The smallest subspecies, found only on the Indonesian island of Sumatra. Critically Endangered.</span>
+      <span class="fact-value">The smallest kind. It lives only on the island of Sumatra in Indonesia, and it's in great danger.</span>
     </li>
     <li>
       <span class="fact-label">Bornean elephant<br><em class="font-normal">E. m. borneensis</em></span>
-      <span class="fact-value">Sometimes called the "pygmy elephant", found in northern Borneo. Its status as a separate subspecies is still debated.</span>
+      <span class="fact-value">Sometimes called the "pygmy elephant". It lives on the island of Borneo. Scientists still aren't sure if it's its own subspecies.</span>
     </li>
   </ul>
 </div>
 
 <div class="section">
-  <h2>More classification details</h2>
+  <h2>Name facts and cousins</h2>
   <div class="info-block">
-    <p><strong>Proboscidea</strong> comes from the Greek word for "trunk". The order once had dozens of species, including woolly mammoths and mastodons.</p>
-    <p><strong>Loxodonta</strong> means "slanted tooth", after the lozenge-shaped ridges on African elephants' molars.</p>
-    <p>The closest living relatives of elephants are <strong>manatees, dugongs and hyraxes</strong>.</p>
+    <p><strong>Proboscidea</strong> comes from an old Greek word for "trunk". Long ago, this group had lots of members, like woolly mammoths and mastodons.</p>
+    <p><strong>Loxodonta</strong> means "slanted tooth". It's named after the shape of the ridges on African elephants' back teeth.</p>
+    <p>
+      Elephants' closest living cousins are <strong>manatees and dugongs</strong> (big, gentle sea animals) and
+      <strong>hyraxes</strong> (small, furry animals a bit like guinea pigs).
+    </p>
   </div>
   <div class="highlight-box">
-    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.</p>
+    <p><strong>Surprise!</strong> Asian elephants are more closely related to woolly mammoths than they are to African elephants.</p>
   </div>
 </div>

@@ -1,85 +1,86 @@
 <%= render "shared/page_header",
-      title: "Diet",
-      intro: "Elephants are herbivores: they eat only plants. Plants aren't very nutritious, so elephants spend most of their waking hours eating." %>
+      title: "What Elephants Eat",
+      intro: "Elephants are herbivores. That means they only eat plants. Plants don't give them much energy, " \
+             "so elephants spend most of the day eating!" %>
 
 <% external_link = ->(label, url) { link_to label, url, target: "_blank", rel: "noopener", class: "text-link" } %>
 
 <div class="section">
-  <h2>How much and how often?</h2>
+  <h2>How much do elephants eat?</h2>
   <div class="stat-row">
     <div class="stat-card">
-      <div class="stat-label">Food per day</div>
+      <div class="stat-label">Food each day</div>
       <div class="stat-value">100–150 kg</div>
-      <p>Up to about 300 pounds of plants for an adult.</p>
+      <p>That's about as heavy as two grown-up people!</p>
     </div>
     <div class="stat-card">
       <div class="stat-label">Time spent eating</div>
       <div class="stat-value">12–18 hours</div>
-      <p>In many small sessions spread across day and night.</p>
+      <p>Elephants snack all day and all night.</p>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Water per day</div>
+      <div class="stat-label">Water each day</div>
       <div class="stat-value">Up to 200 L</div>
-      <p>Sometimes 10 litres in a single trunkful.</p>
+      <p>About a full bathtub! One trunkful can hold about 10 litres.</p>
     </div>
   </div>
   <div class="highlight-box">
     <p>
-      <strong>Why so much?</strong> Elephants digest only about 40% of what they eat. They eat little and often,
-      so they're grazing or browsing for most of the day and much of the night.
+      <strong>Why so much?</strong> Elephants only use less than half of the food they eat. The rest comes out as dung (poo).
+      So they have to eat a lot to get enough energy.
     </p>
   </div>
 </div>
 
 <div class="section">
-  <h2>What do elephants eat?</h2>
-  <p>Follow the links to learn more about each food.</p>
+  <h2>What's on the menu?</h2>
+  <p>Click a food to learn more about it. These links go to another website, so ask a grown-up before you click.</p>
   <table class="data-table">
     <thead>
       <tr>
         <th>Food</th>
-        <th>Details</th>
+        <th>About it</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= external_link.("Grasses", "https://en.wikipedia.org/wiki/Poaceae") %></td>
-        <td>The main food in the wet season, when fresh grass is everywhere.</td>
+        <td><%= external_link.("Grass", "https://en.wikipedia.org/wiki/Poaceae") %></td>
+        <td>The main food in the rainy season, when fresh grass grows everywhere.</td>
       </tr>
       <tr>
         <td><%= external_link.("Leaves and twigs", "https://en.wikipedia.org/wiki/Acacia") %></td>
-        <td>Browsed from trees and shrubs such as acacia, especially in the dry season.</td>
+        <td>Pulled off trees and bushes, like acacia trees. Elephants eat more of these in the dry season.</td>
       </tr>
       <tr>
         <td><%= external_link.("Bark", "https://en.wikipedia.org/wiki/Bark_(botany)") %></td>
-        <td>Stripped from trees with tusks. A good source of fibre and calcium.</td>
+        <td>Peeled off trees with their tusks. Bark is full of fibre and calcium, which keeps bones strong.</td>
       </tr>
       <tr>
         <td><%= external_link.("Roots", "https://en.wikipedia.org/wiki/Root") %></td>
-        <td>Dug up with feet and tusks when food above ground is scarce.</td>
+        <td>Dug up with feet and tusks when there isn't much food above the ground.</td>
       </tr>
       <tr>
         <td><%= external_link.("Fruit", "https://en.wikipedia.org/wiki/Marula") %></td>
-        <td>A favourite treat. Forest elephants eat a lot of fruit, and African elephants love marula.</td>
+        <td>A favourite treat! Forest elephants eat lots of fruit, and African elephants love marula fruit.</td>
       </tr>
       <tr>
         <td><%= external_link.("Bamboo", "https://en.wikipedia.org/wiki/Bamboo") %></td>
-        <td>An important food for Asian elephants in forested areas.</td>
+        <td>A big part of the menu for Asian elephants that live in forests.</td>
       </tr>
       <tr>
-        <td><%= external_link.("Salt and minerals", "https://en.wikipedia.org/wiki/Mineral_lick") %></td>
-        <td>Licked or eaten from mineral-rich soil. Some elephants walk into caves to find it.</td>
+        <td><%= external_link.("Salt", "https://en.wikipedia.org/wiki/Mineral_lick") %></td>
+        <td>Licked off rocks or eaten in salty soil. Some elephants even walk into caves to find it!</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <div class="section">
-  <h2>Diet through the seasons</h2>
+  <h2>Food changes with the seasons</h2>
   <div class="info-block">
     <p>
-      In the rainy season, elephants mostly graze on fresh grass. As the land dries out, grass becomes tough and scarce, so they switch
-      to browsing on leaves, branches, bark and roots. This flexibility lets them survive in places with long dry seasons.
+      In the rainy season, elephants mostly eat fresh grass. When it gets dry, the grass turns hard and brown.
+      Then elephants eat more leaves, branches, bark and roots. Changing their food helps them get through long dry times.
     </p>
   </div>
 </div>
@@ -88,8 +89,8 @@
   <h2>Gardeners of the forest</h2>
   <div class="info-block">
     <p>
-      Because they digest so little, elephants pass many seeds whole in their dung, sometimes kilometres from the parent plant.
-      Some tree species depend almost entirely on elephants to spread their seeds.
+      Lots of seeds go right through an elephant and come out whole in its dung (poo), sometimes far away from where they
+      were eaten. The seeds then grow into new plants. Some trees need elephants to spread their seeds.
     </p>
   </div>
 </div>

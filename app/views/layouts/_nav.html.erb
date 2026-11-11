@@ -1,17 +1,21 @@
+<%# Short, plain labels with a picture each, so early readers can find their way. %>
 <% nav_items = [
-  ["Home", root_path],
-  ["Habitat", habitat_path],
-  ["Classification", classification_path],
-  ["Gallery", gallery_index_path],
-  ["Diet", diet_path],
-  ["Anatomy & Biology", anatomy_path],
-  ["Behavior", behavior_path],
-  ["Pop Culture", pop_culture_path]
+  ["🏠", "Home", root_path],
+  ["🌍", "Where They Live", habitat_path],
+  ["🌳", "Family Tree", classification_path],
+  ["📷", "Photos", gallery_index_path],
+  ["🍃", "Food", diet_path],
+  ["🐘", "Bodies", anatomy_path],
+  ["💤", "What They Do", behavior_path],
+  ["⭐", "Famous Elephants", pop_culture_path]
 ] %>
 
-<nav class="site-nav">
-  <% nav_items.each do |label, path| %>
+<nav class="site-nav" aria-label="Main">
+  <% nav_items.each do |icon, label, path| %>
     <% active = path == root_path ? current_page?(root_path) : request.path.start_with?(path) %>
-    <%= link_to label, path, class: ("active" if active), aria: { current: (active ? "page" : nil) } %>
+    <%= link_to path, class: ("active" if active), aria: { current: (active ? "page" : nil) } do %>
+      <span class="nav-icon" aria-hidden="true"><%= icon %></span>
+      <span><%= label %></span>
+    <% end %>
   <% end %>
 </nav>

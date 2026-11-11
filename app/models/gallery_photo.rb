@@ -25,45 +25,45 @@ class GalleryPhoto < Data.define(:slug, :title, :caption, :description)
   ALL = [
     new(
       slug: "savanna-herd",
-      title: "A herd on the savanna",
-      caption: "An African savanna elephant family crossing open grassland.",
-      description: "Elephant herds are led by the oldest female, the matriarch. She remembers where to find water and food, " \
-                   "and the rest of the family follows her lead, sometimes walking dozens of kilometres in a day."
+      title: "A herd on the grassland",
+      caption: "An African elephant family walking across the grassland.",
+      description: "A group of elephants is called a herd. The oldest female, called the matriarch, leads the way. " \
+                   "She remembers where to find food and water, and her family follows her, sometimes for a very long walk."
     ),
     new(
       slug: "mother-and-calf",
-      title: "Mother and calf",
-      caption: "A calf stays close to its mother for protection.",
-      description: "Calves weigh around 100 kg at birth and can stand within an hour. They nurse for two years or more, " \
-                   "and aunts and older sisters help look after them, a behaviour called allomothering."
+      title: "Mother and baby",
+      caption: "A baby elephant stays close to its mother to keep safe.",
+      description: "A baby elephant is called a calf. It weighs about 100 kg when it's born and can stand up within an hour! " \
+                   "Calves drink their mother's milk for two years or more, and aunts and big sisters help look after them."
     ),
     new(
       slug: "trunk-at-work",
       title: "The trunk at work",
-      caption: "Using the trunk to pull up a clump of grass.",
-      description: "The trunk is a fusion of the nose and upper lip. It is strong enough to lift a log, " \
-                   "yet precise enough to pick up a single peanut."
+      caption: "Using its trunk to pull up a clump of grass.",
+      description: "A trunk is a nose and top lip joined together. It's strong enough to lift a log, " \
+                   "but careful enough to pick up a single peanut!"
     ),
     new(
       slug: "mud-bath",
       title: "Mud bath",
-      caption: "Coating the skin in mud to keep cool.",
-      description: "Mud and dust work like sunscreen and bug spray. The wrinkles in an elephant's skin trap moisture, " \
-                   "helping the animal stay cool in the heat."
+      caption: "Rolling in mud to keep cool.",
+      description: "Mud and dust work like sunscreen and bug spray for elephants. The wrinkles in their skin hold on to " \
+                   "water and mud, which helps them stay cool on hot days."
     ),
     new(
       slug: "asian-elephant-forest",
       title: "Asian elephant in the forest",
-      caption: "An Asian elephant moving through dense forest.",
-      description: "Asian elephants are smaller than their African cousins and have smaller, rounded ears. " \
-                   "Usually only some males grow large tusks."
+      caption: "An Asian elephant walking through a thick forest.",
+      description: "Asian elephants are smaller than African elephants and have smaller, rounder ears. " \
+                   "Most of them don't have big tusks. Only some males grow them."
     ),
     new(
       slug: "watering-hole",
-      title: "At the watering hole",
-      caption: "Elephants gather to drink at the end of a hot day.",
-      description: "An adult elephant can drink well over 100 litres of water a day. In dry seasons, " \
-                   "elephants dig into dry riverbeds with their feet and tusks to reach water underground."
+      title: "At the water hole",
+      caption: "Elephants come to drink at the end of a hot day.",
+      description: "A grown-up elephant can drink more than 100 litres of water in a day. That's enough to fill a small bathtub! " \
+                   "When it's dry, elephants dig into dry riverbeds with their feet and tusks to find water underground."
     )
   ].freeze
 end

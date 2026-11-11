@@ -20,7 +20,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
@@ -31,8 +31,8 @@
     <%= render "layouts/elephant_cursor" %>
 
     <header class="site-header">
-      <p class="site-title"><%= link_to "The Elephant", root_path %></p>
-      <p class="tagline">The world's largest land animal</p>
+      <p class="site-title"><%= link_to root_path do %><span aria-hidden="true">🐘</span> The Elephant<% end %></p>
+      <p class="tagline">Elephant facts and pictures for your school project</p>
     </header>
 
     <%= render "layouts/nav" %>
@@ -42,7 +42,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <%= Date.current.year %> The Elephant Fan Site &middot; Created for educational purposes.</p>
+      <p>&copy; <%= Date.current.year %> The Elephant &middot; Made to help kids learn about elephants.</p>
     </footer>
   </body>
 </html>
