@@ -3,7 +3,11 @@
 <%= link_to "← Back to all photos", gallery_index_path, class: "text-link" %>
 
 <figure class="photo-block">
-  <%= render "shared/image_placeholder" %>
+  <% if @photo.poster_path %>
+    <%= image_tag @photo.poster_path, alt: @photo.title, class: "photo-block-image" %>
+  <% else %>
+    <%= render "shared/image_placeholder" %>
+  <% end %>
   <figcaption><%= @photo.caption %></figcaption>
 </figure>
 

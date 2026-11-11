@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
 
+  # Browsers request /favicon.ico by default; point them at the existing icon.
+  get "favicon.ico", to: redirect("/icon.png")
+
   get "habitat", to: "pages#habitat"
   get "classification", to: "pages#classification"
   get "diet", to: "pages#diet"

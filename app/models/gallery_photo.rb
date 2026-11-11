@@ -1,8 +1,20 @@
-# Static list of gallery photos. Images aren't added yet, so each entry renders
-# a placeholder until an image file is attached to it.
+# Static list of gallery photos. Each entry shows "<slug>.jpg" from the gallery
+# asset folder, or a placeholder if no image file exists.
 class GalleryPhoto < Data.define(:slug, :title, :caption, :description)
+  ASSET_DIR = Rails.root.join("app/assets/images/gallery")
+
   def self.all
     ALL
+  end
+
+  # Drop "<slug>.mp4" (and optionally "<slug>.jpg" as the still frame) into
+  # app/assets/images/gallery/ and the gallery card will play it on hover.
+  def video_path
+    "gallery/#{slug}.mp4" if ASSET_DIR.join("#{slug}.mp4").exist?
+  end
+
+  def poster_path
+    "gallery/#{slug}.jpg" if ASSET_DIR.join("#{slug}.jpg").exist?
   end
 
   def self.find(slug)
