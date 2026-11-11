@@ -1,0 +1,72 @@
+<%= render "shared/page_header",
+      title: "Elephants in Pop Culture",
+      intro: "Elephants are stars! You can find them in books, cartoons and movies. Meet some famous elephants, " \
+             "then find out what real elephants can do." %>
+
+<div class="section kids">
+  <span class="section-label">Famous elephants</span>
+  <div class="kid-grid">
+    <% [
+      ["Dumbo", "🐘🪶", "kid-card--sky", "A Disney movie",
+       "Dumbo is a baby elephant with very big ears. Everyone laughs at his ears, until he uses them to fly!",
+       "Real elephants can't fly. But they flap their big ears to cool down on hot days.",
+       "Learn about elephant ears", anatomy_path],
+      ["Babar", "👑🐘", "kid-card--sun", "A picture book",
+       "Babar is a little elephant who grows up to be king. He wears a smart green suit and a crown.",
+       "Real elephant families are led by a grandma elephant called the matriarch.",
+       "Learn about elephant families", behavior_path],
+      ["Horton", "🐘🌸", "kid-card--pink", "A Dr. Seuss book",
+       "Horton hears tiny people living on a speck of dust. He says: \"A person's a person, no matter how small.\"",
+       "Real elephants have amazing hearing. They can even feel sounds through their feet!",
+       "Learn how elephants talk", behavior_path],
+      ["Elmer", "🐘🌈", "kid-card--rainbow", "A picture book",
+       "Elmer is a patchwork elephant covered in bright colours. He is funny and loves to make his friends laugh.",
+       "Real elephants are grey. They roll in mud and dust to protect their skin from the sun.",
+       "Learn about elephant skin", anatomy_path],
+      ["Gerald", "🐘🐷", "kid-card--leaf", "Elephant & Piggie books",
+       "Gerald is an elephant who worries a lot. His best friend is Piggie, and they always help each other.",
+       "Real elephants have best friends too. They say hello by wrapping their trunks together.",
+       "Learn about elephant friends", behavior_path],
+      ["Colonel Hathi", "🐘🥁", "kid-card--sand", "The Jungle Book",
+       "Colonel Hathi leads his elephant troop on a marching parade through the jungle. Hup, two, three, four!",
+       "\"Hathi\" means \"elephant\" in Hindi. Real Asian elephants live in the forests of India.",
+       "Learn where elephants live", habitat_path],
+      ["Manny", "🦣❄️", "kid-card--ice", "The Ice Age movies",
+       "Manny is a woolly mammoth. He is big, grumpy on the outside and kind on the inside.",
+       "Mammoths are elephant cousins that lived long ago. They had thick hairy coats to stay warm.",
+       "Learn about elephant cousins", classification_path]
+    ].each do |name, picture, colour, from, story, real_fact, link_label, path| %>
+      <div class="kid-card <%= colour %>">
+        <div class="kid-picture" role="img" aria-label="Picture of <%= name %>"><%= picture %></div>
+        <h3><%= name %></h3>
+        <span class="kid-from"><%= from %></span>
+        <p><%= story %></p>
+        <p class="kid-real"><strong>Real elephant fact:</strong> <%= real_fact %></p>
+        <%= link_to "#{link_label} →", path, class: "kid-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="section kids">
+  <span class="section-label">Did you know?</span>
+  <div class="highlight-box">
+    <p>
+      <strong>Jumbo size!</strong> Long ago, there was a real elephant named Jumbo. He was so big and so famous
+      that people started saying "jumbo" to mean "really big". So a jumbo jet is named after an elephant!
+    </p>
+  </div>
+</div>
+
+<div class="section kids">
+  <span class="section-label">Your turn</span>
+  <div class="kid-card kid-card--sun kid-card--wide">
+    <div class="kid-picture" role="img" aria-label="Crayons and paper">🖍️📄</div>
+    <h3>Make your own elephant!</h3>
+    <p>
+      Grab some paper and crayons. Draw your very own elephant character. What is its name? What colour is it?
+      Does it have a special power, like flying or super hearing?
+    </p>
+    <%= link_to "See real elephant photos for ideas →", gallery_index_path, class: "kid-link" %>
+  </div>
+</div>

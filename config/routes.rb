@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "diet", to: "pages#diet"
   get "anatomy", to: "pages#anatomy"
   get "behavior", to: "pages#behavior"
+  get "pop-culture", to: "pages#pop_culture", as: :pop_culture
 
   resources :gallery, only: %i[index show], param: :slug
 end

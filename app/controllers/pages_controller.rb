@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def behavior
   end
+
+  def pop_culture
+  end
 end
