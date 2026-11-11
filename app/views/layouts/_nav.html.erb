@@ -1,0 +1,16 @@
+<% nav_items = [
+  ["Home", root_path],
+  ["Habitat", habitat_path],
+  ["Classification", classification_path],
+  ["Gallery", gallery_index_path],
+  ["Diet", diet_path],
+  ["Anatomy & Biology", anatomy_path],
+  ["Behavior", behavior_path]
+] %>
+
+<nav class="site-nav">
+  <% nav_items.each do |label, path| %>
+    <% active = path == root_path ? current_page?(root_path) : request.path.start_with?(path) %>
+    <%= link_to label, path, class: ("active" if active), aria: { current: (active ? "page" : nil) } %>
+  <% end %>
+</nav>

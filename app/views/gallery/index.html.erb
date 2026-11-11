@@ -1,0 +1,23 @@
+<%= render "shared/page_header",
+      title: "Image Gallery",
+      intro: "Photos of elephants in the wild. Select a photo to see it on its own page with more about what's happening in it." %>
+
+<div class="gallery-grid">
+  <% @photos.each do |photo| %>
+    <%= link_to gallery_path(photo), class: "gallery-item" do %>
+      <%= render "shared/image_placeholder" %>
+      <div class="caption">
+        <h3><%= photo.title %></h3>
+        <p><%= photo.caption %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div id="submit" class="submit-section">
+  <h3>Share your elephant photos</h3>
+  <p>
+    Have you seen elephants on safari, at a sanctuary or at the zoo? We'd love to feature your pictures in the gallery.
+    Photo uploads are coming soon, so check back to submit your own.
+  </p>
+</div>

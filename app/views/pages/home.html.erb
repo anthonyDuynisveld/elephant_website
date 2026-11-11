@@ -1,59 +1,52 @@
-<% content_for :title, "Elephant Website" %>
+<div class="hero-image">
+  <%= render "shared/image_placeholder", label: "Elephant photo coming soon" %>
+</div>
 
-<div class="min-h-screen flex flex-col bg-stone-50 text-stone-800">
-  <header class="border-b border-stone-200">
-    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-      <%= link_to "🐘 Elephant", root_path, class: "text-lg font-semibold tracking-tight" %>
-      <ul class="flex gap-6 text-sm text-stone-600">
-        <li><a href="#about" class="hover:text-stone-900">About</a></li>
-        <li><a href="#facts" class="hover:text-stone-900">Facts</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="section">
+  <h1 class="page-title">Welcome</h1>
+  <p class="page-subtitle">
+    This site is all about elephants, the largest land animals on Earth. Learn where they live, how they're
+    classified, what they eat, how their bodies work and how they behave. Then browse the gallery and share your own photos.
+  </p>
+</div>
 
-  <main class="flex-1">
-    <section class="mx-auto max-w-5xl px-6 py-24 text-center">
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Gentle giants, big hearts.</h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-stone-600">
-        Welcome to the Elephant Website — a simple place to learn about the largest land animals on Earth.
-      </p>
-      <a href="#about" class="mt-10 inline-block rounded-md bg-stone-800 px-5 py-3 text-sm font-medium text-white hover:bg-stone-700">
-        Learn more
-      </a>
-    </section>
-
-    <section id="about" class="border-t border-stone-200 bg-white">
-      <div class="mx-auto max-w-5xl px-6 py-16">
-        <h2 class="text-2xl font-semibold">About elephants</h2>
-        <p class="mt-4 max-w-3xl text-stone-600">
-          Elephants are highly intelligent, social animals that live in close family groups led by the oldest female.
-          They are found across Africa and Asia, and play a vital role in shaping the ecosystems they live in.
-        </p>
+<div class="section">
+  <span class="section-label">Explore</span>
+  <div class="card-grid">
+    <% [
+      ["Habitat", habitat_path, "Where on Earth elephants live and what they need to thrive."],
+      ["Classification", classification_path, "Scientific names, species and subspecies."],
+      ["Image Gallery", gallery_index_path, "Photos of elephants, plus a place to submit your own."],
+      ["Diet", diet_path, "What elephants eat, how often, and how much."],
+      ["Anatomy & Biology", anatomy_path, "Trunks, tusks, size, lifespan and how elephants breathe."],
+      ["Behavior", behavior_path, "Finding food, staying safe from predators and sleeping."]
+    ].each do |title, path, blurb| %>
+      <div class="card">
+        <h3><%= title %></h3>
+        <p><%= blurb %></p>
+        <%= link_to "Learn more →", path, class: "card-link" %>
       </div>
-    </section>
+    <% end %>
+  </div>
+</div>
 
-    <section id="facts" class="mx-auto max-w-5xl px-6 py-16">
-      <h2 class="text-2xl font-semibold">Quick facts</h2>
-      <div class="mt-8 grid gap-6 sm:grid-cols-3">
-        <div class="rounded-lg border border-stone-200 bg-white p-6">
-          <p class="text-3xl font-bold">6,000 kg</p>
-          <p class="mt-2 text-sm text-stone-600">Weight of an adult African bull elephant.</p>
-        </div>
-        <div class="rounded-lg border border-stone-200 bg-white p-6">
-          <p class="text-3xl font-bold">~70 years</p>
-          <p class="mt-2 text-sm text-stone-600">Typical lifespan in the wild.</p>
-        </div>
-        <div class="rounded-lg border border-stone-200 bg-white p-6">
-          <p class="text-3xl font-bold">40,000</p>
-          <p class="mt-2 text-sm text-stone-600">Muscles in an elephant's trunk.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-stone-200">
-    <div class="mx-auto max-w-5xl px-6 py-6 text-sm text-stone-500">
-      &copy; <%= Date.current.year %> Elephant Website
+<div class="section">
+  <span class="section-label">Quick facts</span>
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-label">Weight</div>
+      <div class="stat-value">6,000 kg</div>
+      <p>Weight of an adult African savanna bull elephant.</p>
     </div>
-  </footer>
+    <div class="stat-card">
+      <div class="stat-label">Lifespan</div>
+      <div class="stat-value">60–70 years</div>
+      <p>Typical lifespan in the wild.</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Trunk</div>
+      <div class="stat-value">~40,000</div>
+      <p>Muscle bundles in an elephant's trunk.</p>
+    </div>
+  </div>
 </div>

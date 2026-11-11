@@ -11,4 +11,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
+
+  get "habitat", to: "pages#habitat"
+  get "classification", to: "pages#classification"
+  get "diet", to: "pages#diet"
+  get "anatomy", to: "pages#anatomy"
+  get "behavior", to: "pages#behavior"
+
+  resources :gallery, only: %i[index show], param: :slug
 end

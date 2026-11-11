@@ -1,0 +1,89 @@
+<%= render "shared/page_header",
+      title: "Scientific Name & Classification",
+      intro: "Elephants belong to the family Elephantidae, the last surviving family of the order Proboscidea, which also included mammoths and mastodons." %>
+
+<div class="section">
+  <h2>Scientific classification</h2>
+  <table class="data-table">
+    <tbody>
+      <% [
+        ["Kingdom", "Animalia", "Animals"],
+        ["Phylum", "Chordata", "Animals with a spinal cord"],
+        ["Class", "Mammalia", "Mammals"],
+        ["Order", "Proboscidea", "Mammals with a trunk (proboscis)"],
+        ["Family", "Elephantidae", "Elephants and their extinct relatives, such as mammoths"],
+        ["Genera", "Loxodonta and Elephas", "African elephants and Asian elephants"]
+      ].each do |rank, name, meaning| %>
+        <tr>
+          <th><%= rank %></th>
+          <td><em><%= name %></em></td>
+          <td><%= meaning %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Primary species</h2>
+  <p>There are three living species of elephant.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="section-label"><em>Loxodonta africana</em></span>
+      <h3>African savanna elephant</h3>
+      <p>
+        The largest land animal alive. Has huge ears shaped like the African continent, and both males and females grow tusks. Listed as Endangered.
+      </p>
+    </div>
+    <div class="card">
+      <span class="section-label"><em>Loxodonta cyclotis</em></span>
+      <h3>African forest elephant</h3>
+      <p>
+        Smaller, with rounder ears and straighter, downward-pointing tusks suited to dense forest.
+        Recognised as a separate species in 2021. Listed as Critically Endangered.
+      </p>
+    </div>
+    <div class="card">
+      <span class="section-label"><em>Elephas maximus</em></span>
+      <h3>Asian elephant</h3>
+      <p>
+        Smaller ears, a rounded or humped back and a two-domed head. Females usually have no tusks, and many males don't either. Listed as Endangered.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Subspecies</h2>
+  <p>African elephants have no officially recognised subspecies. The Asian elephant is commonly divided into these subspecies:</p>
+  <ul class="fact-list">
+    <li>
+      <span class="fact-label">Indian elephant<br><em class="font-normal">E. m. indicus</em></span>
+      <span class="fact-value">Mainland Asia, from India and Nepal to Vietnam and the Malay Peninsula. The most widespread subspecies.</span>
+    </li>
+    <li>
+      <span class="fact-label">Sri Lankan elephant<br><em class="font-normal">E. m. maximus</em></span>
+      <span class="fact-value">The largest Asian subspecies, often with patches of pale, depigmented skin on the face and ears.</span>
+    </li>
+    <li>
+      <span class="fact-label">Sumatran elephant<br><em class="font-normal">E. m. sumatranus</em></span>
+      <span class="fact-value">The smallest subspecies, found only on the Indonesian island of Sumatra. Critically Endangered.</span>
+    </li>
+    <li>
+      <span class="fact-label">Bornean elephant<br><em class="font-normal">E. m. borneensis</em></span>
+      <span class="fact-value">Sometimes called the "pygmy elephant", found in northern Borneo. Its status as a separate subspecies is still debated.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>More classification details</h2>
+  <div class="info-block">
+    <p><strong>Proboscidea</strong> comes from the Greek word for "trunk". The order once had dozens of species, including woolly mammoths and mastodons.</p>
+    <p><strong>Loxodonta</strong> means "slanted tooth", after the lozenge-shaped ridges on African elephants' molars.</p>
+    <p>The closest living relatives of elephants are <strong>manatees, dugongs and hyraxes</strong>.</p>
+  </div>
+  <div class="highlight-box">
+    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.</p>
+  </div>
+</div>
