@@ -482,3 +482,68 @@
     .fact-label { min-width: auto; }
   }
 }
+
+/* Elephant cursor (see app/javascript/controllers/elephant_cursor_controller.js).
+   The native cursor is only hidden once JS has activated the custom one. */
+.elephant-cursor-active,
+.elephant-cursor-active * {
+  cursor: none !important;
+}
+
+.elephant-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  will-change: transform;
+}
+
+.elephant-cursor.is-visible {
+  opacity: 1;
+}
+
+.elephant-cursor svg {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+  transition: scale 0.15s ease;
+  transform-origin: 6px 37.5px; /* hotspot, so hover growth doesn't shift the aim point */
+}
+
+.elephant-cursor.is-over-link svg {
+  scale: 1.15;
+}
+
+/* Trunk pivots at its base on the face (SVG user-space coordinates) */
+.elephant-cursor__trunk {
+  transform-origin: 13px 29px;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.elephant-cursor.is-spraying .elephant-cursor__trunk {
+  transform: rotate(165deg);
+}
+
+.elephant-cursor__drop {
+  position: fixed;
+  z-index: 9998;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #5bb6ea;
+  box-shadow: inset -1px -1px 0 rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elephant-cursor__trunk,
+  .elephant-cursor svg {
+    transition: none;
+  }
+}
