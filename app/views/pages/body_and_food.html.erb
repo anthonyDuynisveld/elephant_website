@@ -1,0 +1,25 @@
+<%= render "shared/page_header",
+      title: "Bodies & Food",
+      intro: "How do elephants' amazing bodies work, and what do they eat to keep them going? Pick a tab to find out!" %>
+
+<%# The selected tab is kept in the URL hash, so /body-and-food#food opens straight on the Food tab %>
+<div class="section" data-controller="tabs">
+  <div class="kid-tabs" role="tablist" aria-label="Bodies and food">
+    <% [["body", "🐘", "Bodies"], ["food", "🍃", "Food"]].each_with_index do |(key, picture, label), index| %>
+      <button type="button" role="tab" class="kid-tab" id="<%= key %>-tab"
+              aria-controls="<%= key %>" aria-selected="<%= index.zero? %>" tabindex="<%= index.zero? ? 0 : -1 %>"
+              data-tabs-target="tab" data-action="tabs#select keydown->tabs#navigate">
+        <span class="kid-tab__picture" aria-hidden="true"><%= picture %></span>
+        <span><%= label %></span>
+      </button>
+    <% end %>
+  </div>
+
+  <div class="kid-tab-panel" role="tabpanel" id="body" aria-labelledby="body-tab" tabindex="0" data-tabs-target="panel">
+    <%= render "pages/body" %>
+  </div>
+
+  <div class="kid-tab-panel" role="tabpanel" id="food" aria-labelledby="food-tab" tabindex="0" data-tabs-target="panel" hidden>
+    <%= render "pages/food" %>
+  </div>
+</div>

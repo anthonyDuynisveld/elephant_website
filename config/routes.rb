@@ -15,11 +15,18 @@ Rails.application.routes.draw do
   # Browsers request /favicon.ico by default; point them at the existing icon.
   get "favicon.ico", to: redirect("/icon.png")
 
-  get "habitat", to: "pages#habitat"
+  get "life-in-the-wild", to: "pages#life_in_the_wild", as: :life_in_the_wild
+  # Links straight to one tab of the Life in the Wild page
+  direct(:where_they_live) { { controller: "pages", action: "life_in_the_wild", anchor: "where-they-live" } }
+  direct(:what_they_do) { { controller: "pages", action: "life_in_the_wild", anchor: "what-they-do" } }
+  # Old pages, now tabs of Life in the Wild
+  get "habitat", to: redirect("/life-in-the-wild#where-they-live")
+  get "behavior", to: redirect("/life-in-the-wild#what-they-do")
   get "classification", to: "pages#classification"
-  get "diet", to: "pages#diet"
-  get "anatomy", to: "pages#anatomy"
-  get "behavior", to: "pages#behavior"
+  get "body-and-food", to: "pages#body_and_food", as: :body_and_food
+  # Old pages, now tabs on Bodies & Food
+  get "anatomy", to: redirect("/body-and-food#body")
+  get "diet", to: redirect("/body-and-food#food")
   get "pop-culture", to: "pages#pop_culture", as: :pop_culture
 
   resources :gallery, only: %i[index show], param: :slug

@@ -1,11 +1,11 @@
 # Static list of elephants in pop culture, grouped by the kind of reference (movie, book, ...).
-# Each reference can link to one of our own pages (`path`, a route helper name) and/or an
-# outside site (`url`).
+# Each reference can link to one of our own pages (`path`, a route helper name, plus an optional
+# `anchor` to open a tab) and/or an outside site (`url`).
 class PopCultureReference < Data.define(:category, :name, :picture, :colour, :from, :story, :real_fact,
-                                        :link_label, :path, :url_label, :url)
+                                        :link_label, :path, :anchor, :url_label, :url)
   Category = Data.define(:key, :label, :title, :picture, :fact_label, :intro, :footnote)
 
-  def initialize(real_fact: nil, link_label: nil, path: nil, url_label: nil, url: nil, **)
+  def initialize(real_fact: nil, link_label: nil, path: nil, anchor: nil, url_label: nil, url: nil, **)
     super
   end
 
@@ -55,7 +55,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       category: :movies, name: "Dumbo", picture: "🐘🪶", colour: "kid-card--sky", from: "A Disney movie (1941 & 2019)",
       story: "Dumbo is a baby elephant with very big ears. Everyone laughs at his ears, until he uses them to fly!",
       real_fact: "Real elephants can't fly. But they flap their big ears to cool down on hot days.",
-      link_label: "Learn about elephant ears", path: :anatomy_path,
+      link_label: "Learn about elephant ears", path: :body_and_food_path, anchor: "body",
       url_label: "Disney's Dumbo", url: "https://movies.disney.com/dumbo-2019"
     ),
     new(
@@ -63,14 +63,14 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       from: "The Jungle Book (1967 & 2016)",
       story: "Colonel Hathi leads his elephant troop on a marching parade through the jungle. Hup, two, three, four!",
       real_fact: "\"Hathi\" means \"elephant\" in Hindi. Real Asian elephants live in the forests of India.",
-      link_label: "Learn where elephants live", path: :habitat_path,
+      link_label: "Learn where elephants live", path: :where_they_live_path,
       url_label: "Disney's Jungle Book", url: "https://movies.disney.com/the-jungle-book-2016"
     ),
     new(
       category: :movies, name: "Tantor", picture: "🐘🌿", colour: "kid-card--leaf", from: "Disney's Tarzan (1999)",
       story: "Tantor is Tarzan's best elephant friend. He gets scared easily, but he is very brave when his friends need help.",
       real_fact: "Real elephants look after each other. If a baby is in trouble, the whole family rushes to help.",
-      link_label: "Learn about elephant families", path: :behavior_path,
+      link_label: "Learn about elephant families", path: :what_they_do_path,
       url_label: "Disney's Tarzan", url: "https://movies.disney.com/tarzan"
     ),
     new(
@@ -92,34 +92,34 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       category: :books, name: "Babar", picture: "👑🐘", colour: "kid-card--sun", from: "A picture book (1931)",
       story: "Babar is a little elephant who visits a big city, then grows up to be king. He wears a smart green suit and a crown.",
       real_fact: "Real elephant families are led by a grandma elephant called the matriarch.",
-      link_label: "Learn about elephant families", path: :behavior_path,
+      link_label: "Learn about elephant families", path: :what_they_do_path,
       url_label: "Find the book", url: "https://www.amazon.com/Story-Babar-Jean-Brunhoff/dp/0394805755"
     ),
     new(
       category: :books, name: "Horton", picture: "🐘🌸", colour: "kid-card--pink", from: "A Dr. Seuss book",
       story: "Horton hears tiny people living on a speck of dust. He says: \"A person's a person, no matter how small.\"",
       real_fact: "Real elephants have amazing hearing. They can even feel sounds through their feet!",
-      link_label: "Learn how elephants talk", path: :behavior_path,
+      link_label: "Learn how elephants talk", path: :what_they_do_path,
       url_label: "Find the book", url: "https://www.amazon.com/Horton-Hears-Who-Dr-Seuss/dp/0394800788"
     ),
     new(
       category: :books, name: "Elmer", picture: "🐘🌈", colour: "kid-card--rainbow", from: "A picture book",
       story: "Elmer is a patchwork elephant covered in bright colours. He is funny and loves to make his friends laugh.",
       real_fact: "Real elephants are grey. They roll in mud and dust to protect their skin from the sun.",
-      link_label: "Learn about elephant skin", path: :anatomy_path
+      link_label: "Learn about elephant skin", path: :body_and_food_path, anchor: "body"
     ),
     new(
       category: :books, name: "Gerald", picture: "🐘🐷", colour: "kid-card--leaf", from: "Elephant & Piggie books",
       story: "Gerald is an elephant who worries a lot. His best friend is Piggie, and they always help each other.",
       real_fact: "Real elephants have best friends too. They say hello by wrapping their trunks together.",
-      link_label: "Learn about elephant friends", path: :behavior_path
+      link_label: "Learn about elephant friends", path: :what_they_do_path
     ),
     new(
       category: :books, name: "Stella", picture: "🐘🦍", colour: "kid-card--sand", from: "The One and Only Ivan",
       story: "Stella is a kind elephant who lives in a shopping mall with her friend Ivan the gorilla. " \
              "They dream of a better home.",
       real_fact: "Elephants need lots of space. In the wild, they can walk many kilometres in one day!",
-      link_label: "Learn where elephants live", path: :habitat_path,
+      link_label: "Learn where elephants live", path: :where_they_live_path,
       url_label: "Find the book", url: "https://www.amazon.com/One-Only-Ivan-Katherine-Applegate/dp/0061992275"
     ),
     new(
@@ -142,7 +142,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       category: :documentaries, name: "Elephant", picture: "🐘🏜️", colour: "kid-card--sun", from: "Disneynature (2020)",
       story: "Follow an elephant family on a very long walk across the Kalahari Desert to find food and water.",
       real_fact: "The matriarch remembers where the water is, even after many years.",
-      link_label: "Learn what elephants eat", path: :diet_path,
+      link_label: "Learn what elephants eat", path: :body_and_food_path, anchor: "food",
       url_label: "See it on IMDb", url: "https://www.imdb.com/title/tt10296790/"
     ),
     new(
@@ -202,7 +202,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       story: "People say elephants remember everything forever.",
       real_fact: "Elephants have great memories. They remember water holes and friends for years. " \
                  "But like us, they don't remember everything!",
-      link_label: "Learn how elephants think", path: :behavior_path
+      link_label: "Learn how elephants think", path: :what_they_do_path
     )
   ].freeze
 end

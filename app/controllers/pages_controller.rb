@@ -2,19 +2,13 @@ class PagesController < ApplicationController
   def home
   end
 
-  def habitat
-  end
-
   def classification
   end
 
-  def diet
+  def body_and_food
   end
 
-  def anatomy
-  end
-
-  def behavior
+  def life_in_the_wild
   end
 
   def pop_culture

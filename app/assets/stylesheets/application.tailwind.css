@@ -673,7 +673,7 @@
     color: #fff;
   }
 
-  /* Pop culture: one tab per kind of reference (movies, books, ...) */
+  /* Tabs (pop culture kinds of reference, Bodies & Food); see tabs_controller.js */
   .kid-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -736,6 +736,19 @@
     border-radius: 24px;
     box-shadow: var(--shadow-card);
     padding: 1.5rem;
+  }
+
+  /* Panels whose content is already cards and sections, so no box around them */
+  .kid-tab-panel--plain {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  /* Arriving via a #tab link scrolls to the panel; leave room for the sticky nav and the tab row */
+  [role="tabpanel"] {
+    scroll-margin-top: 10rem;
   }
 
   @media (max-width: 600px) {

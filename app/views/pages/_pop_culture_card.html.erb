@@ -11,7 +11,7 @@
   <% end %>
   <% if reference.path || reference.url %>
     <div class="kid-links">
-      <%= link_to "#{reference.link_label} →", public_send(reference.path), class: "kid-link" if reference.path %>
+      <%= link_to "#{reference.link_label} →", public_send(reference.path, anchor: reference.anchor), class: "kid-link" if reference.path %>
       <% if reference.url %>
         <%= link_to "#{reference.url_label} ↗", reference.url, class: "kid-link kid-link--outside",
                     target: "_blank", rel: "noopener noreferrer" %>

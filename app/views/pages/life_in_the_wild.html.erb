@@ -1,0 +1,28 @@
+<%= render "shared/page_header",
+      title: "Life in the Wild",
+      intro: "Where do elephants live, and what do they get up to all day? Pick a tab to find out!" %>
+
+<% tabs = [
+  ["where-they-live", "🌍", "Where They Live", "pages/where_they_live"],
+  ["what-they-do", "💤", "What They Do", "pages/what_they_do"]
+] %>
+
+<div data-controller="tabs">
+  <div class="kid-tabs" role="tablist" aria-label="Life in the wild">
+    <% tabs.each_with_index do |(id, icon, label, _partial), index| %>
+      <button type="button" role="tab" class="kid-tab" id="<%= id %>-tab"
+              aria-controls="<%= id %>" aria-selected="<%= index.zero? %>" tabindex="<%= index.zero? ? 0 : -1 %>"
+              data-tabs-target="tab" data-action="tabs#select keydown->tabs#navigate">
+        <span class="kid-tab__picture" aria-hidden="true"><%= icon %></span>
+        <span><%= label %></span>
+      </button>
+    <% end %>
+  </div>
+
+  <% tabs.each_with_index do |(id, _icon, _label, partial), index| %>
+    <div class="kid-tab-panel kid-tab-panel--plain" role="tabpanel" id="<%= id %>" aria-labelledby="<%= id %>-tab"
+         tabindex="0" data-tabs-target="panel" <%= "hidden" unless index.zero? %>>
+      <%= render partial %>
+    </div>
+  <% end %>
+</div>
