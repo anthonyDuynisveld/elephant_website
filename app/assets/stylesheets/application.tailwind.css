@@ -236,7 +236,8 @@
   }
 
   .card p:last-child,
-  .info-block p:last-child {
+  .info-block p:last-child,
+  :is(.card, .info-block) p:has(+ .copy:last-child) {
     margin-bottom: 0;
   }
 
@@ -542,6 +543,94 @@
     color: var(--color-accent-dark);
   }
 
+  /* Copy buttons: grab a fact or picture for a project (see copy_controller.js).
+     The button sits at the bottom right of its block. */
+  .copy {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  /* Cards in a row line their buttons up along the bottom */
+  :is(.card, .stat-card):has(> .copy) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  :is(.card, .stat-card) > .copy {
+    align-self: stretch;
+  }
+
+  .fact-list li > .copy {
+    flex-shrink: 0;
+    align-self: center;
+    margin: 0 0 0 auto;
+    padding-top: 0;
+  }
+
+  .photo-block figcaption:has(> .copy) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+  }
+
+  .photo-block figcaption > .copy {
+    margin: 0 0 0 auto;
+    padding-top: 0;
+  }
+
+  .copy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    padding: 0.3rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-forest);
+    background: #fff;
+    border: 2px solid var(--color-forest);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  }
+
+  .copy-button:hover {
+    background: var(--color-forest);
+    color: #fff;
+  }
+
+  .copy-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  .copy.is-copied .copy-button {
+    background: var(--color-sun);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  .copy.is-failed .copy-button {
+    background: #fff;
+    border-color: var(--color-accent);
+    color: var(--color-accent-dark);
+  }
+
+  /* Read out by screen readers after a copy, but not shown */
+  .copy__status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
   /* Kid-friendly pages (ages 6-10): bigger text, bright colours, big pictures */
   .kids p {
     font-size: 1.1rem;
@@ -641,7 +730,8 @@
   .site-nav a:active,
   .card-link:active,
   .kid-link:active,
-  .button:active {
+  .button:active,
+  .copy-button:active {
     transform: scale(0.95);
   }
 
@@ -759,6 +849,7 @@
     .site-main { padding: 2rem 1rem; }
     .stat-row { grid-template-columns: 1fr; }
     .fact-list li { flex-direction: column; gap: 0.2rem; }
+    .fact-list li > .copy { padding-top: 0.5rem; }
     .fact-label { min-width: auto; }
   }
 }
