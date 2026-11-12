@@ -11,4 +11,5 @@
     <span><strong><%= photo.title %>.</strong> <%= photo.description %></span>
     <%= copy_picture_button photo.image_path, photo.title if photo.image_path %>
   </figcaption>
+  <%= render "shared/image_credit", path: photo.image_path if photo.image_path %>
 </figure>

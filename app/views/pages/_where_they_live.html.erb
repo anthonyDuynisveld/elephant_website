@@ -27,6 +27,7 @@
       <span>A map of where elephants live today.</span>
       <%= copy_picture_button "pages/habitat-range-map.png", "map of where elephants live" %>
     </figcaption>
+    <%= render "shared/image_credit", path: "pages/habitat-range-map.png" %>
   </figure>
 </div>
 
@@ -123,3 +124,5 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/learn_more", page: :habitat %>

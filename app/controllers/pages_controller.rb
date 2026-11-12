@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def life_in_the_wild
   end
 
+  def credits
+  end
+
   def pop_culture
   end
 end

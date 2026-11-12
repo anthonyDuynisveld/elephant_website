@@ -136,5 +136,8 @@
       <span>An elephant's skeleton, shown next to a person for scale.</span>
       <%= copy_picture_button "pages/anatomy-skeleton.png", "elephant skeleton" %>
     </figcaption>
+    <%= render "shared/image_credit", path: "pages/anatomy-skeleton.png" %>
   </figure>
 </div>
+
+<%= render "shared/learn_more", page: :anatomy %>

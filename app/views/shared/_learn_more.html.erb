@@ -1,0 +1,20 @@
+<%# locals: (page:) %>
+<% resources = PageResource.for(page) %>
+
+<div class="section">
+  <h2>Learn more</h2>
+  <p>These websites are made for kids and have even more elephant facts. Links open in a new tab.</p>
+  <%= render "shared/resource_list", items: resources.learn %>
+</div>
+
+<div class="section">
+  <h2>Doing a research report?</h2>
+  <p>
+    <strong>Project tip:</strong> Use more than one source, and write down the website's name and the date you read it.
+    Then your teacher can see you did great research!
+  </p>
+  <h3>Good sources to cite</h3>
+  <%= render "shared/resource_list", items: resources.research %>
+  <h3>Research tools</h3>
+  <%= render "shared/resource_list", items: PageResource::TOOLS %>
+</div>

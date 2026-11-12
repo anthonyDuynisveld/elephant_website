@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "anatomy", to: redirect("/body-and-food#body")
   get "diet", to: redirect("/body-and-food#food")
   # Famous Elephants is now the home page
+  get "credits", to: "pages#credits", as: :credits
   get "pop-culture", to: redirect("/")
 
   # The Photos page is gone: its photos now sit on the pages they belong to

@@ -1,0 +1,9 @@
+<%# locals: (items:) %>
+<ul class="resource-list">
+  <% items.each do |resource| %>
+    <li>
+      <%= link_to "#{resource.label} ↗", resource.url, target: "_blank", rel: "noopener", class: "text-link" %>
+      <span class="resource-blurb"><%= resource.blurb %></span>
+    </li>
+  <% end %>
+</ul>
