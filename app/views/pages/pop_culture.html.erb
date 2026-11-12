@@ -1,58 +1,52 @@
 <%= render "shared/page_header",
       title: "Elephants in Pop Culture",
-      intro: "Elephants are stars! You can find them in books, cartoons and movies. Meet some famous elephants, " \
+      intro: "Elephants are stars! You can find them in books, cartoons, movies and nature shows. Meet some famous elephants, " \
              "then find out what real elephants can do." %>
 
-<div class="section kids" data-controller="load-more" data-load-more-per-page-value="3">
+<div class="section kids" data-controller="tabs">
   <span class="section-label">Famous elephants</span>
-  <div class="kid-grid">
-    <% [
-      ["Dumbo", "🐘🪶", "kid-card--sky", "A Disney movie",
-       "Dumbo is a baby elephant with very big ears. Everyone laughs at his ears, until he uses them to fly!",
-       "Real elephants can't fly. But they flap their big ears to cool down on hot days.",
-       "Learn about elephant ears", anatomy_path],
-      ["Babar", "👑🐘", "kid-card--sun", "A picture book",
-       "Babar is a little elephant who grows up to be king. He wears a smart green suit and a crown.",
-       "Real elephant families are led by a grandma elephant called the matriarch.",
-       "Learn about elephant families", behavior_path],
-      ["Horton", "🐘🌸", "kid-card--pink", "A Dr. Seuss book",
-       "Horton hears tiny people living on a speck of dust. He says: \"A person's a person, no matter how small.\"",
-       "Real elephants have amazing hearing. They can even feel sounds through their feet!",
-       "Learn how elephants talk", behavior_path],
-      ["Elmer", "🐘🌈", "kid-card--rainbow", "A picture book",
-       "Elmer is a patchwork elephant covered in bright colours. He is funny and loves to make his friends laugh.",
-       "Real elephants are grey. They roll in mud and dust to protect their skin from the sun.",
-       "Learn about elephant skin", anatomy_path],
-      ["Gerald", "🐘🐷", "kid-card--leaf", "Elephant & Piggie books",
-       "Gerald is an elephant who worries a lot. His best friend is Piggie, and they always help each other.",
-       "Real elephants have best friends too. They say hello by wrapping their trunks together.",
-       "Learn about elephant friends", behavior_path],
-      ["Colonel Hathi", "🐘🥁", "kid-card--sand", "The Jungle Book",
-       "Colonel Hathi leads his elephant troop on a marching parade through the jungle. Hup, two, three, four!",
-       "\"Hathi\" means \"elephant\" in Hindi. Real Asian elephants live in the forests of India.",
-       "Learn where elephants live", habitat_path],
-      ["Manny", "🦣❄️", "kid-card--ice", "The Ice Age movies",
-       "Manny is a woolly mammoth. He is big, grumpy on the outside and kind on the inside.",
-       "Mammoths are elephant cousins that lived long ago. They had thick hairy coats to stay warm.",
-       "Learn about elephant cousins", classification_path]
-    ].each_with_index do |(name, picture, colour, from, story, real_fact, link_label, path), index| %>
-      <div class="kid-card <%= colour %>" data-load-more-target="item" <%= "hidden" if index >= 3 %>
-           data-mascot-label="Real elephant fact" data-mascot-fact="<%= real_fact %>">
-        <div class="kid-picture" role="img" aria-label="Picture of <%= name %>"><%= picture %></div>
-        <h3><%= name %></h3>
-        <span class="kid-from"><%= from %></span>
-        <p><%= story %></p>
-        <%# Ellie pops this fact up on hover; the printed copy is only shown where she can't (touch devices) %>
-        <p class="kid-real"><strong>Real elephant fact:</strong> <%= real_fact %></p>
-        <%= link_to "#{link_label} →", path, class: "kid-link" %>
-      </div>
+  <p>Pick a tab to meet the elephants inside!</p>
+
+  <div class="kid-tabs" role="tablist" aria-label="Kinds of famous elephants">
+    <% PopCultureReference.categories.each_with_index do |category, index| %>
+      <button type="button" role="tab" class="kid-tab" id="pop-culture-<%= category.key %>-tab"
+              aria-controls="pop-culture-<%= category.key %>" aria-selected="<%= index.zero? %>" tabindex="<%= index.zero? ? 0 : -1 %>"
+              data-tabs-target="tab" data-action="tabs#select keydown->tabs#navigate">
+        <span class="kid-tab__picture" aria-hidden="true"><%= category.picture %></span>
+        <span><%= category.label %></span>
+        <span class="kid-tab__count"><%= PopCultureReference.for(category).size %></span>
+      </button>
     <% end %>
   </div>
-  <div class="load-more">
-    <button type="button" class="kid-link" data-load-more-target="button" data-action="load-more#more">
-      Show more elephants 🐘
-    </button>
-  </div>
+
+  <% PopCultureReference.categories.each_with_index do |category, index| %>
+    <% references = PopCultureReference.for(category) %>
+    <div class="kid-tab-panel" role="tabpanel" id="pop-culture-<%= category.key %>" aria-labelledby="pop-culture-<%= category.key %>-tab"
+         tabindex="0" data-tabs-target="panel" data-controller="load-more" data-load-more-per-page-value="3" <%= "hidden" unless index.zero? %>>
+      <h2><%= category.title %></h2>
+      <p><%= category.intro %></p>
+
+      <div class="kid-grid">
+        <% references.each_with_index do |reference, reference_index| %>
+          <%= render "pages/pop_culture_card", reference:, category:, hidden: reference_index >= 3 %>
+        <% end %>
+      </div>
+
+      <% if references.size > 3 %>
+        <div class="load-more">
+          <button type="button" class="kid-link" data-load-more-target="button" data-action="load-more#more">
+            Show more <%= category.picture %>
+          </button>
+        </div>
+      <% end %>
+
+      <% if category.footnote %>
+        <div class="highlight-box">
+          <p><%= sanitize(category.footnote) %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="section kids">

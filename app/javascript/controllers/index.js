@@ -18,3 +18,6 @@ application.register("load-more", LoadMoreController)
 
 import HoverVideoController from "./hover_video_controller"
 application.register("hover-video", HoverVideoController)
+
+import TabsController from "./tabs_controller"
+application.register("tabs", TabsController)

@@ -1,0 +1,21 @@
+<%# locals: (reference:, category:, hidden:) %>
+<div class="kid-card <%= reference.colour %>" data-load-more-target="item" <%= "hidden" if hidden %>
+     <% if reference.real_fact %>data-mascot-label="<%= category.fact_label %>" data-mascot-fact="<%= reference.real_fact %>"<% end %>>
+  <div class="kid-picture" role="img" aria-label="Picture of <%= reference.name %>"><%= reference.picture %></div>
+  <h3><%= reference.name %></h3>
+  <span class="kid-from"><%= reference.from %></span>
+  <p><%= reference.story %></p>
+  <% if reference.real_fact %>
+    <%# Ellie pops this fact up on hover; the printed copy is only shown where she can't (touch devices) %>
+    <p class="kid-real"><strong><%= category.fact_label %>:</strong> <%= reference.real_fact %></p>
+  <% end %>
+  <% if reference.path || reference.url %>
+    <div class="kid-links">
+      <%= link_to "#{reference.link_label} →", public_send(reference.path), class: "kid-link" if reference.path %>
+      <% if reference.url %>
+        <%= link_to "#{reference.url_label} ↗", reference.url, class: "kid-link kid-link--outside",
+                    target: "_blank", rel: "noopener noreferrer" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

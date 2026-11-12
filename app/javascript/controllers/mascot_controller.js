@@ -14,6 +14,7 @@ const TARGET_CLASS = "is-mascot-target"
 const HIDE_DELAY_MS = 350      // grace period so moving between blocks doesn't flicker the bubble
 const WALK_SETTLE_MS = 250     // stop wobbling this long after the last scroll event
 const EDGE_GAP = 16
+const MIN_MOVE_PX = 2          // ignore tiny position changes so the glide isn't restarted for nothing
 const INTRO_KEY = "mascot-intro-seen"
 const INTRO_MS = 6000
 const FACT_LABEL = "Ellie's bonus fact"
@@ -66,7 +67,10 @@ export default class extends Controller {
     clearTimeout(this.walkTimer)
     clearTimeout(this.introTimer)
     cancelAnimationFrame(this.frame)
+    this.frame = null
+    this.y = null
     this.current?.classList.remove(TARGET_CLASS)
+    this.current = null
   }
 
   onOver(event) {
@@ -79,6 +83,12 @@ export default class extends Controller {
 
   onOut(event) {
     if (!this.current || this.current.contains(event.relatedTarget)) return
+    // Heading straight into another fact block: onOver takes it from here
+    if (event.relatedTarget?.closest?.("[data-mascot-fact]")) return
+
+    // Only ever keep one pending hide. pointerout fires for every element the
+    // pointer crosses, and an orphaned timer would hide Ellie mid-hover.
+    clearTimeout(this.hideTimer)
     this.hideTimer = setTimeout(() => this.hide(), HIDE_DELAY_MS)
   }
 
@@ -141,7 +151,11 @@ export default class extends Controller {
   }
 
   moveTo(y) {
-    this.mascotTarget.style.transform = `translateY(${Math.round(y)}px)`
+    y = Math.round(y)
+    if (this.y != null && Math.abs(y - this.y) < MIN_MOVE_PX) return
+
+    this.y = y
+    this.mascotTarget.style.transform = `translateY(${y}px)`
   }
 
   // Say hello once per browser session
