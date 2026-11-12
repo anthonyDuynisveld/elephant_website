@@ -17,6 +17,15 @@ class GalleryPhoto < Data.define(:slug, :title, :caption, :description)
     "gallery/#{slug}.jpg" if ASSET_DIR.join("#{slug}.jpg").exist?
   end
 
+  # Photos where the elephants are small in the frame get zoomed in on the
+  # gallery tile: slug => [focus x%, focus y%, zoom factor].
+  TILE_FOCUS = { "watering-hole" => [47, 53, 3.2] }.freeze
+
+  def tile_image_style
+    x, y, zoom = TILE_FOCUS[slug]
+    "transform-origin: #{x}% #{y}%; transform: scale(#{zoom});" if x
+  end
+
   def self.find(slug)
     all.find { |photo| photo.slug == slug } || raise(ActiveRecord::RecordNotFound)
   end
