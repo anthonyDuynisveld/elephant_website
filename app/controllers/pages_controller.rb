@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def pop_culture
   end
+
+  def school_projects
+  end
 end
