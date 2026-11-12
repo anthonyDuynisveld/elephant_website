@@ -21,3 +21,6 @@ application.register("tabs", TabsController)
 
 import CopyController from "./copy_controller"
 application.register("copy", CopyController)
+
+import AnatomyGameController from "./anatomy_game_controller"
+application.register("anatomy-game", AnatomyGameController)

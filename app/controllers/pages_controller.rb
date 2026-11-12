@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def body_and_food
   end
 
+  def anatomy_game
+  end
+
   def life_in_the_wild
   end
 

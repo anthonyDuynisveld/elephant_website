@@ -1166,3 +1166,94 @@
     animation: none;
   }
 }
+
+/* Anatomy game (see anatomy_game_controller.js) */
+.game-elephant {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 1rem auto;
+  background: var(--color-surface-alt);
+  border: 3px solid var(--color-sky);
+  border-radius: var(--radius-card);
+}
+
+.game-part {
+  cursor: pointer;
+  outline: none;
+  transition: filter 0.15s;
+}
+
+.game-part:hover,
+.game-part:focus-visible {
+  filter: brightness(1.15) drop-shadow(0 0 5px var(--color-sun));
+}
+
+.game-part.is-correct {
+  filter: drop-shadow(0 0 8px var(--color-forest)) drop-shadow(0 0 3px var(--color-forest));
+}
+
+.game-part.is-wrong {
+  animation: game-shake 0.4s;
+}
+
+.game-status {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  color: var(--color-muted);
+}
+
+.game-prompt {
+  margin: 0.25rem 0 0;
+}
+
+.game-message {
+  text-align: center;
+  min-height: 3.5rem;
+}
+
+.game-feedback {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.game-feedback.is-right { color: var(--color-forest); }
+.game-feedback.is-wrong { color: var(--color-accent-dark); }
+
+.game-fact {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.game-start,
+.game-summary {
+  text-align: center;
+}
+
+.game-button {
+  display: block;
+  margin: 1rem auto 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.game-button[hidden],
+.game-board[hidden],
+.game-start[hidden],
+.game-summary[hidden] {
+  display: none;
+}
+
+@keyframes game-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-part.is-wrong { animation: none; }
+}
