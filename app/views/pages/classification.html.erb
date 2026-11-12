@@ -81,21 +81,23 @@
       <tr>
         <th>Group</th>
         <th>Science name</th>
+        <th>How to say it</th>
         <th>What it means</th>
       </tr>
     </thead>
     <tbody>
       <% [
-        ["Kingdom", "Animalia", "All animals"],
-        ["Phylum", "Chordata", "Animals with a spinal cord (a bundle of nerves down the back), like fish, birds and you"],
-        ["Class", "Mammalia", "Mammals: animals with hair that feed their babies milk"],
-        ["Order", "Proboscidea", "Animals with a trunk"],
-        ["Family", "Elephantidae", "Elephants and mammoths"],
-        ["Genus", "Loxodonta and Elephas", "African elephants and Asian elephants"]
-      ].each do |rank, name, meaning| %>
+        ["Kingdom", "Animalia", "an-ih-MAL-ee-uh", "All animals"],
+        ["Phylum", "Chordata", "FY-lum / kor-DAH-tuh", "Animals with a spinal cord (a bundle of nerves down the back), like fish, birds and you"],
+        ["Class", "Mammalia", "mah-MAY-lee-uh", "Mammals: animals with hair that feed their babies milk"],
+        ["Order", "Proboscidea", "pro-bah-SID-ee-uh", "Animals with a trunk"],
+        ["Family", "Elephantidae", "el-eh-FAN-tih-day", "Elephants and mammoths"],
+        ["Genus", "Loxodonta / Elephas", "lok-soh-DON-tuh / EL-eh-fus", "African elephants and Asian elephants"]
+      ].each do |rank, name, pronunciation, meaning| %>
         <tr>
           <th><%= rank %></th>
           <td><em><%= name %></em></td>
+          <td><%= pronunciation %></td>
           <td><%= meaning %></td>
         </tr>
       <% end %>
