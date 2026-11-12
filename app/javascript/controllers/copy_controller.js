@@ -89,7 +89,16 @@ export default class extends Controller {
 
 // Plain words with tidy spacing. textContent (unlike innerText) ignores CSS such
 // as the uppercase stat labels, but it also drops <br>, so swap those for spaces.
+// Lists become one "- item" line each instead of running together.
 function wordsIn(element) {
+  if (element.matches("ul, ol")) {
+    return Array.from(element.children)
+      .map((item) => wordsIn(item))
+      .filter(Boolean)
+      .map((words) => `- ${words}`)
+      .join("\n")
+  }
+
   const clone = element.cloneNode(true)
   clone.querySelectorAll("br").forEach((br) => br.replaceWith(" "))
   return clone.textContent.replace(/\s+/g, " ").trim()

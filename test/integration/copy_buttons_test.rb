@@ -2,7 +2,7 @@ require "test_helper"
 
 class CopyButtonsTest < ActionDispatch::IntegrationTest
   test "fact pages have copy buttons" do
-    [ root_path, life_in_the_wild_path, body_and_food_path, classification_path ].each do |path|
+    [ root_path, life_in_the_wild_path, body_and_food_path, classification_path, school_projects_path ].each do |path|
       get path
 
       assert_response :success
