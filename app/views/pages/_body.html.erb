@@ -33,6 +33,120 @@
     The biggest savanna elephants are taller than a basketball hoop! Females are smaller than males. A baby elephant,
     called a <em>calf</em>, weighs about 100 kg when it's born. That's more than a grown-up person!
   </p>
+
+  <h3>Size comparison</h3>
+  <p>Here's how the three kinds of elephant compare to a person (1.8 m / 6 ft) and a car (1.5 m / 5 ft tall).</p>
+  <div style="background: var(--surface, #faf6ee); border: 1px solid var(--border, #e0dbd0); border-radius: 16px; padding: 1.5rem; overflow-x: auto; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+    <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:800px; display:block; margin:0 auto;">
+      <!-- Ground line -->
+      <line x1="20" y1="280" x2="780" y2="280" stroke="#b5a88a" stroke-width="2"/>
+
+      <!-- Scale markers on left -->
+      <text x="12" y="280" font-size="11" fill="#888" text-anchor="end">0 m</text>
+      <line x1="18" y1="280" x2="24" y2="280" stroke="#ccc" stroke-width="1"/>
+      <text x="12" y="224" font-size="11" fill="#888" text-anchor="end">1 m</text>
+      <line x1="18" y1="224" x2="780" y2="224" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="12" y="168" font-size="11" fill="#888" text-anchor="end">2 m</text>
+      <line x1="18" y1="168" x2="780" y2="168" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="12" y="112" font-size="11" fill="#888" text-anchor="end">3 m</text>
+      <line x1="18" y1="112" x2="780" y2="112" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="12" y="56" font-size="11" fill="#888" text-anchor="end">4 m</text>
+      <line x1="18" y1="56" x2="780" y2="56" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="4,4"/>
+
+      <!-- Person (1.8m = 101px) -->
+      <g transform="translate(70, 0)">
+        <!-- Head -->
+        <circle cx="0" cy="170" r="9" fill="#d4a574"/>
+        <!-- Body -->
+        <line x1="0" y1="179" x2="0" y2="230" stroke="#d4a574" stroke-width="4"/>
+        <!-- Arms -->
+        <line x1="0" y1="190" x2="-12" y2="215" stroke="#d4a574" stroke-width="3"/>
+        <line x1="0" y1="190" x2="12" y2="215" stroke="#d4a574" stroke-width="3"/>
+        <!-- Legs -->
+        <line x1="0" y1="230" x2="-8" y2="278" stroke="#d4a574" stroke-width="3"/>
+        <line x1="0" y1="230" x2="8" y2="278" stroke="#d4a574" stroke-width="3"/>
+        <text x="0" y="296" font-size="11" fill="#666" text-anchor="middle" font-weight="600">Person</text>
+        <text x="0" y="310" font-size="10" fill="#999" text-anchor="middle">1.8 m</text>
+      </g>
+
+      <!-- Car (1.5m tall = 84px) -->
+      <g transform="translate(170, 0)">
+        <rect x="-35" y="196" width="70" height="45" rx="6" fill="#7eaac4"/>
+        <rect x="-25" y="202" width="20" height="16" rx="3" fill="#b8d8e8"/>
+        <rect x="5" y="202" width="20" height="16" rx="3" fill="#b8d8e8"/>
+        <rect x="-40" y="236" width="80" height="30" rx="4" fill="#5e8ea8"/>
+        <circle cx="-22" cy="272" r="10" fill="#444"/>
+        <circle cx="-22" cy="272" r="5" fill="#888"/>
+        <circle cx="22" cy="272" r="10" fill="#444"/>
+        <circle cx="22" cy="272" r="5" fill="#888"/>
+        <text x="0" y="296" font-size="11" fill="#666" text-anchor="middle" font-weight="600">Car</text>
+        <text x="0" y="310" font-size="10" fill="#999" text-anchor="middle">1.5 m</text>
+      </g>
+
+      <!-- African Forest Elephant (2.5m = 140px) -->
+      <g transform="translate(330, 0)">
+        <ellipse cx="0" cy="195" rx="45" ry="35" fill="#8fac7a"/>
+        <ellipse cx="-30" cy="175" rx="20" ry="22" fill="#8fac7a"/>
+        <!-- Ears -->
+        <ellipse cx="-48" cy="168" rx="12" ry="18" fill="#7a9a68"/>
+        <!-- Trunk -->
+        <path d="M-45,185 Q-55,210 -48,235" stroke="#7a9a68" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Tusks -->
+        <line x1="-38" y1="188" x2="-42" y2="208" stroke="#f5f0e0" stroke-width="3" stroke-linecap="round"/>
+        <!-- Legs -->
+        <rect x="-25" y="225" width="12" height="53" rx="4" fill="#7a9a68"/>
+        <rect x="-8" y="225" width="12" height="53" rx="4" fill="#7a9a68"/>
+        <rect x="10" y="225" width="12" height="53" rx="4" fill="#8fac7a"/>
+        <rect x="27" y="225" width="12" height="53" rx="4" fill="#8fac7a"/>
+        <!-- Tail -->
+        <path d="M42,200 Q55,210 50,225" stroke="#7a9a68" stroke-width="2" fill="none"/>
+        <text x="0" y="296" font-size="11" fill="#2d6b3f" text-anchor="middle" font-weight="700">Forest</text>
+        <text x="0" y="310" font-size="10" fill="#999" text-anchor="middle">2.5 m</text>
+      </g>
+
+      <!-- Asian Elephant (3m = 168px) -->
+      <g transform="translate(500, 0)">
+        <ellipse cx="0" cy="170" rx="55" ry="42" fill="#c4a67a"/>
+        <ellipse cx="-38" cy="145" rx="22" ry="26" fill="#c4a67a"/>
+        <!-- Ears -->
+        <ellipse cx="-56" cy="140" rx="10" ry="16" fill="#b5956a"/>
+        <!-- Trunk -->
+        <path d="M-53,160 Q-65,195 -55,230" stroke="#b5956a" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Tusks -->
+        <line x1="-46" y1="165" x2="-50" y2="190" stroke="#f5f0e0" stroke-width="3" stroke-linecap="round"/>
+        <!-- Legs -->
+        <rect x="-30" y="207" width="14" height="71" rx="5" fill="#b5956a"/>
+        <rect x="-10" y="207" width="14" height="71" rx="5" fill="#b5956a"/>
+        <rect x="10" y="207" width="14" height="71" rx="5" fill="#c4a67a"/>
+        <rect x="30" y="207" width="14" height="71" rx="5" fill="#c4a67a"/>
+        <!-- Tail -->
+        <path d="M52,178 Q65,190 60,210" stroke="#b5956a" stroke-width="2" fill="none"/>
+        <text x="0" y="296" font-size="11" fill="#b5872a" text-anchor="middle" font-weight="700">Asian</text>
+        <text x="0" y="310" font-size="10" fill="#999" text-anchor="middle">3 m</text>
+      </g>
+
+      <!-- African Savanna Elephant (4m = 224px) -->
+      <g transform="translate(680, 0)">
+        <ellipse cx="0" cy="135" rx="65" ry="52" fill="#6b8f5e"/>
+        <ellipse cx="-45" cy="105" rx="26" ry="32" fill="#6b8f5e"/>
+        <!-- Ears -->
+        <ellipse cx="-68" cy="98" rx="16" ry="24" fill="#5a7d4e"/>
+        <!-- Trunk -->
+        <path d="M-63,125 Q-78,170 -68,220" stroke="#5a7d4e" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <!-- Tusks -->
+        <line x1="-54" y1="130" x2="-60" y2="165" stroke="#f5f0e0" stroke-width="4" stroke-linecap="round"/>
+        <!-- Legs -->
+        <rect x="-35" y="182" width="16" height="96" rx="6" fill="#5a7d4e"/>
+        <rect x="-12" y="182" width="16" height="96" rx="6" fill="#5a7d4e"/>
+        <rect x="12" y="182" width="16" height="96" rx="6" fill="#6b8f5e"/>
+        <rect x="35" y="182" width="16" height="96" rx="6" fill="#6b8f5e"/>
+        <!-- Tail -->
+        <path d="M62,145 Q78,160 72,185" stroke="#5a7d4e" stroke-width="3" fill="none"/>
+        <text x="0" y="296" font-size="11" fill="#2d6b3f" text-anchor="middle" font-weight="700">Savanna</text>
+        <text x="0" y="310" font-size="10" fill="#999" text-anchor="middle">4 m</text>
+      </g>
+    </svg>
+  </div>
 </div>
 
 <div class="section">
