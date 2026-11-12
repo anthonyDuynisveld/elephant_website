@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "behavior", to: redirect("/life-in-the-wild#what-they-do")
   get "classification", to: "pages#classification"
   get "body-and-food", to: "pages#body_and_food", as: :body_and_food
+  get "anatomy-game", to: "pages#anatomy_game", as: :anatomy_game
   # Old pages, now tabs on Bodies & Food
   get "anatomy", to: redirect("/body-and-food#body")
   get "diet", to: redirect("/body-and-food#food")
