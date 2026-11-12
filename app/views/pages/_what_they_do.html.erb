@@ -57,7 +57,8 @@
     </div>
     <div class="card" data-mascot-fact="Elephants flee from recordings of buzzing bees and make a special rumble that warns others about them.">
       <h3>Alarm calls</h3>
-      <p>Elephants make different alarm calls for different dangers. Some research suggests they have a specific call for humans.</p>
+      <p>Elephants make different alarm calls for different dangers. Some research suggests they have a specific call for humans.
+        <%= source_link "PLOS ONE study", "https://doi.org/10.1371/journal.pone.0089403" %></p>
       <%= copy_button "Alarm calls" %>
     </div>
   </div>
@@ -90,6 +91,7 @@
     <p>
       <strong>Record breakers:</strong> Scientists in Botswana found that some elephant leaders stayed awake for up to
       46 hours in a row. That's almost two whole days!
+      <%= source_link "PLOS ONE study", "https://doi.org/10.1371/journal.pone.0171903" %>
     </p>
     <%= copy_button "Record breakers" %>
   </div>
@@ -116,3 +118,5 @@
   </div>
   <%= render "shared/gallery_photo", slug: "savanna-herd" %>
 </div>
+
+<%= render "shared/learn_more", page: :behavior %>

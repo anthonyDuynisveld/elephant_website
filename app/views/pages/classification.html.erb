@@ -8,6 +8,7 @@
   <p>
     There are three species (kinds) of elephant alive today. All three are <strong>endangered</strong>. That means so few
     are left that they could disappear forever.
+    <%= source_link "IUCN Red List", "https://iucn.org/news/species/202103/african-elephant-species-now-endangered-and-critically-endangered-iucn-red-list" %>
   </p>
   <div class="card-grid">
     <div class="card" data-mascot-fact="A savanna elephant&#x27;s ears can measure about 1.5 metres from top to bottom.">
@@ -24,6 +25,7 @@
       <p>
         Smaller, with rounder ears and straight tusks that point down. This helps it squeeze through thick forest.
         It was only listed as its own species in 2021, and it's in the most danger of all.
+        <%= source_link "IUCN Red List", "https://iucn.org/news/species/202103/african-elephant-species-now-endangered-and-critically-endangered-iucn-red-list" %>
       </p>
       <%= copy_button "African forest elephant" %>
     </div>
@@ -47,7 +49,8 @@
     <%= copy_button "Elephant cousins and surprises" %>
   </div>
   <div class="highlight-box" data-mascot-fact="Woolly mammoths survived on Wrangel Island until about 4,000 years ago, after the Great Pyramid of Giza was built!">
-    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.</p>
+    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.
+      <%= source_link "Science News", "https://www.sciencenews.org/article/mammoth-findings-asian-elephant-closest-living-kin" %></p>
     <%= copy_button "Surprising fact" %>
   </div>
 </div>
@@ -112,3 +115,5 @@
     </tbody>
   </table>
 </div>
+
+<%= render "shared/learn_more", page: :classification %>

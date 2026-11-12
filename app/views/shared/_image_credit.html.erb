@@ -1,0 +1,8 @@
+<%# locals: (path:) %>
+<% credit = ImageCredit.for(path) %>
+<% if credit %>
+  <p class="image-credit">
+    Picture by <%= link_to credit.author, credit.url, target: "_blank", rel: "noopener", class: "text-link" %> on Wikimedia Commons,
+    <%= link_to credit.license, credit.license_url, target: "_blank", rel: "noopener", class: "text-link" %>.
+  </p>
+<% end %>

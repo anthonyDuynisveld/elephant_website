@@ -1,0 +1,26 @@
+<%= render "shared/page_header",
+      title: "Picture Credits",
+      intro: "Every picture on this site was made by someone. Thank you to these photographers and artists! " \
+             "If you use a picture in your project, say who made it." %>
+
+<div class="section">
+  <h2>Who made the pictures</h2>
+  <ul class="resource-list">
+    <% ImageCredit.all.each do |credit| %>
+      <li>
+        <%= link_to "#{credit.source} ↗", credit.url, target: "_blank", rel: "noopener", class: "text-link" %>
+        <span class="resource-blurb">
+          By <%= credit.author %>, <%= link_to credit.license, credit.license_url, target: "_blank", rel: "noopener", class: "text-link" %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>How to say where a picture came from</h2>
+  <p>
+    Under your picture, write: <strong>Picture by [name of the person], Wikimedia Commons, [licence]</strong>.
+    For example: <em>Picture by Dietmar Rabich, Wikimedia Commons, CC BY-SA 4.0.</em>
+  </p>
+</div>
