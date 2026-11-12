@@ -30,5 +30,7 @@ Rails.application.routes.draw do
   # Famous Elephants is now the home page
   get "pop-culture", to: redirect("/")
 
-  resources :gallery, only: %i[index show], param: :slug
+  # The Photos page is gone: its photos now sit on the pages they belong to
+  get "gallery", to: redirect("/")
+  get "gallery/:slug", to: redirect { |params, _request| GalleryPhoto.page_for(params[:slug]) }
 end

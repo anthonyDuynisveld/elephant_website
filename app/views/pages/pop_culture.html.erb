@@ -78,7 +78,7 @@
       Grab some paper and crayons. Draw your very own elephant character. What is its name? What colour is it?
       Does it have a special power, like flying or super hearing?
     </p>
-    <%= link_to "See real elephant photos for ideas →", gallery_index_path, class: "kid-link" %>
+    <%= link_to "See real elephant photos for ideas →", what_they_do_path, class: "kid-link" %>
   </div>
 </div>
 
@@ -88,8 +88,7 @@
     <% [
       ["🐘", "Bodies & Food", body_and_food_path, "Trunks, tusks, giant ears, and a LOT of plants to eat!"],
       ["🌍", "Life in the Wild", life_in_the_wild_path, "Where elephants live, and what they get up to all day."],
-      ["🌳", "Family Tree", classification_path, "Meet the three kinds of elephants and their cousins, the mammoths."],
-      ["📷", "Photos", gallery_index_path, "Look at pictures of elephants in the wild."]
+      ["🌳", "Family Tree", classification_path, "Meet the three kinds of elephants and their cousins, the mammoths."]
     ].each do |icon, title, path, blurb| %>
       <div class="card">
         <div class="card-icon" aria-hidden="true"><%= icon %></div>

@@ -1,0 +1,14 @@
+<%# locals: (slug:) %>
+<%# One of the elephant photos (see GalleryPhoto), shown with its title and story under it %>
+<% photo = GalleryPhoto.find(slug) %>
+<figure class="photo-block" id="photo-<%= photo.slug %>">
+  <% if photo.image_path %>
+    <%= image_tag photo.image_path, alt: photo.caption, loading: "lazy", class: "photo-block-image" %>
+  <% else %>
+    <%= render "shared/image_placeholder" %>
+  <% end %>
+  <figcaption>
+    <span><strong><%= photo.title %>.</strong> <%= photo.description %></span>
+    <%= copy_picture_button photo.image_path, photo.title if photo.image_path %>
+  </figcaption>
+</figure>

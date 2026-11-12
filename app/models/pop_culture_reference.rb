@@ -169,7 +169,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
     new(
       category: :websites, name: "National Geographic Kids", picture: "🗺️", colour: "kid-card--sun", from: "Website",
       story: "Fun facts, photos and videos about African elephants, made just for kids.",
-      link_label: "See our elephant photos", path: :gallery_index_path,
+      link_label: "Meet the three kinds of elephants", path: :classification_path,
       url_label: "Visit Nat Geo Kids",
       url: "https://kids.nationalgeographic.com/animals/mammals/facts/african-elephant"
     ),
