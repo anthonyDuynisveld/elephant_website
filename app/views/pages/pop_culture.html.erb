@@ -1,11 +1,20 @@
+<%# This is the home page, so it opens with the welcome (and photo) for school-project visitors %>
+<div class="hero-image">
+  <%= image_tag "pages/home-hero.jpg", alt: "An African elephant dust-bathing, shown from trunk to tail", class: "hero-photo" %>
+</div>
+
 <%= render "shared/page_header",
-      title: "Elephants in Pop Culture",
-      intro: "Elephants are stars! You can find them in books, cartoons, movies and nature shows. Meet some famous elephants, " \
-             "then find out what real elephants can do." %>
+      title: "Hi, elephant explorer!",
+      intro: "Are you doing a school project about elephants? You're in the right place! Here you'll find facts and pictures " \
+             "to help you make a great poster, presentation or report." %>
 
 <div class="section kids" data-controller="tabs">
   <span class="section-label">Famous elephants</span>
-  <p>Pick a tab to meet the elephants inside!</p>
+  <h2>Elephants in Pop Culture</h2>
+  <p>
+    Elephants are stars! You can find them in books, cartoons, movies and nature shows. Meet some famous elephants,
+    then find out what real elephants can do. Pick a tab to meet the elephants inside!
+  </p>
 
   <div class="kid-tabs" role="tablist" aria-label="Kinds of famous elephants">
     <% PopCultureReference.categories.each_with_index do |category, index| %>
@@ -70,5 +79,32 @@
       Does it have a special power, like flying or super hearing?
     </p>
     <%= link_to "See real elephant photos for ideas →", gallery_index_path, class: "kid-link" %>
+  </div>
+</div>
+
+<div class="section">
+  <span class="section-label">Keep exploring</span>
+  <div class="card-grid">
+    <% [
+      ["🐘", "Bodies & Food", body_and_food_path, "Trunks, tusks, giant ears, and a LOT of plants to eat!"],
+      ["🌍", "Life in the Wild", life_in_the_wild_path, "Where elephants live, and what they get up to all day."],
+      ["🌳", "Family Tree", classification_path, "Meet the three kinds of elephants and their cousins, the mammoths."],
+      ["📷", "Photos", gallery_index_path, "Look at pictures of elephants in the wild."]
+    ].each do |icon, title, path, blurb| %>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true"><%= icon %></div>
+        <h3><%= title %></h3>
+        <p><%= blurb %></p>
+        <%= link_to "Let's go →", path, class: "card-link", aria: { label: "Let's go to #{title}" } %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="highlight-box">
+    <p>
+      <strong>Project tip:</strong> Pick one topic. Write down 3 facts you like. Then explain them in your own words,
+      and add a picture to show what you mean.
+    </p>
+    <%= copy_button "Project tip" %>
   </div>
 </div>
