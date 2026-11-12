@@ -84,6 +84,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       story: "This movie is based on a true story. Soldiers have to carry an elephant all the way through the jungle " \
              "to a village that needs one.",
       real_fact: "In parts of Asia, elephants are very important to people and are a big part of their history.",
+      link_label: "Learn about Asian elephants", path: :classification_path,
       url_label: "See it on IMDb", url: "https://www.imdb.com/title/tt0114048/"
     ),
 
@@ -127,6 +128,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       story: "A man named Lawrence takes care of a herd of wild elephants in South Africa. " \
              "Over time, the elephants learn to trust him.",
       real_fact: "Elephants are very smart. They can remember friends, both elephants and people, for many years.",
+      link_label: "Learn how elephants think", path: :what_they_do_path,
       url_label: "Find the book", url: "https://www.amazon.com/Elephant-Whisperer-Life-Herd-African/dp/1250007828"
     ),
 
@@ -136,6 +138,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       from: "Echo: An Elephant to Remember (2010)",
       story: "Echo was a grandma elephant who led her family in Kenya. Scientists watched her family for more than 30 years!",
       real_fact: "Elephant families stick together for their whole lives.",
+      link_label: "Learn about elephant families", path: :what_they_do_path,
       url_label: "Watch on PBS", url: "https://www.pbs.org/wnet/nature/echo-an-elephant-to-remember-introduction/5560/"
     ),
     new(
@@ -150,6 +153,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       from: "National Geographic (2023)",
       story: "This show visits four different elephant families around the world to see how they live.",
       real_fact: "Elephants in different places have different ways of doing things, just like people!",
+      link_label: "Learn where elephants live", path: :where_they_live_path,
       url_label: "See it on IMDb", url: "https://www.imdb.com/title/tt21064498/"
     ),
     new(
@@ -157,6 +161,7 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       story: "Meet the brave people who work hard to protect elephants and stop people from taking their tusks. " \
              "Best for big kids and grown-ups.",
       real_fact: "Lots of people around the world work every day to keep elephants safe.",
+      link_label: "Learn about elephant tusks", path: :body_and_food_path, anchor: "body",
       url_label: "See it on IMDb", url: "https://www.imdb.com/title/tt5952266/"
     ),
 
@@ -164,22 +169,26 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
     new(
       category: :websites, name: "National Geographic Kids", picture: "🗺️", colour: "kid-card--sun", from: "Website",
       story: "Fun facts, photos and videos about African elephants, made just for kids.",
+      link_label: "See our elephant photos", path: :gallery_index_path,
       url_label: "Visit Nat Geo Kids",
       url: "https://kids.nationalgeographic.com/animals/mammals/facts/african-elephant"
     ),
     new(
       category: :websites, name: "World Wildlife Fund", picture: "🐼", colour: "kid-card--leaf", from: "Website",
       story: "Find out why elephants need our help and what people are doing to protect them.",
+      link_label: "Learn where elephants live", path: :where_they_live_path,
       url_label: "Visit WWF", url: "https://www.worldwildlife.org/species/elephant"
     ),
     new(
       category: :websites, name: "San Diego Zoo Wildlife Explorers", picture: "🦁", colour: "kid-card--sky", from: "Website",
       story: "Easy-to-read facts and great photos about how elephants live.",
+      link_label: "Learn how elephants live", path: :what_they_do_path,
       url_label: "Visit San Diego Zoo", url: "https://sdzwildlifeexplorers.org/animals/african-elephant"
     ),
     new(
       category: :websites, name: "Smithsonian", picture: "🏛️", colour: "kid-card--sand", from: "Website",
       story: "Learn how big elephants are, what they eat and how they live together, from a famous museum and zoo.",
+      link_label: "Learn about elephant bodies", path: :body_and_food_path, anchor: "body",
       url_label: "Visit the Smithsonian", url: "https://www.si.edu/spotlight/elephants"
     ),
 
@@ -188,13 +197,15 @@ class PopCultureReference < Data.define(:category, :name, :picture, :colour, :fr
       category: :myths, name: "\"Elephants love doing circus tricks\"", picture: "🎪", colour: "kid-card--pink",
       from: "Myth",
       story: "For a long time, circuses showed elephants standing on balls and doing tricks, like they were having fun.",
-      real_fact: "Elephants don't do tricks in the wild. Many countries don't allow elephants in circuses anymore."
+      real_fact: "Elephants don't do tricks in the wild. Many countries don't allow elephants in circuses anymore.",
+      link_label: "Learn what elephants really do", path: :what_they_do_path
     ),
     new(
       category: :myths, name: "\"Elephants are scared of mice\"", picture: "🐭", colour: "kid-card--sky", from: "Myth",
       story: "In lots of cartoons, a big elephant jumps up on a chair when it sees a tiny mouse.",
       real_fact: "Scientists have never found that elephants are afraid of mice. " \
-                 "They can just be careful around small, quick animals."
+                 "They can just be careful around small, quick animals.",
+      link_label: "Learn how elephants stay safe", path: :what_they_do_path
     ),
     new(
       category: :myths, name: "\"An elephant never forgets\"", picture: "🧠", colour: "kid-card--sun",

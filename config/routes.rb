@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "pages#pop_culture"
 
   # Browsers request /favicon.ico by default; point them at the existing icon.
   get "favicon.ico", to: redirect("/icon.png")
@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   # Old pages, now tabs on Bodies & Food
   get "anatomy", to: redirect("/body-and-food#body")
   get "diet", to: redirect("/body-and-food#food")
-  get "pop-culture", to: "pages#pop_culture", as: :pop_culture
+  # Famous Elephants is now the home page
+  get "pop-culture", to: redirect("/")
 
   resources :gallery, only: %i[index show], param: :slug
 end
