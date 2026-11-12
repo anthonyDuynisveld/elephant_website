@@ -72,9 +72,77 @@
 @layer components {
   /* Header, nav and footer */
   .site-header {
+    --scene-height: 104px; /* the hills along the bottom; the title sits in the sky above them */
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
     background: linear-gradient(180deg, #81d4fa, var(--color-sky));
-    padding: 2rem 1.5rem 1.5rem;
+    padding: 1.75rem 1.5rem calc(var(--scene-height) + 0.25rem);
     text-align: center;
+  }
+
+  .site-header > p {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Savanna scene behind the title (layouts/_header_scene.html.erb). Things in the
+     sky hug the content column on wide screens and the edges on narrow ones. */
+  .header-scene {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .header-scene > svg {
+    position: absolute;
+  }
+
+  .header-scene__sun {
+    top: 12px;
+    left: max(2%, calc(50% - 450px));
+    width: 84px;
+  }
+
+  .header-scene__cloud--one {
+    top: 56px;
+    left: max(8%, calc(50% - 400px));
+    width: 92px;
+  }
+
+  .header-scene__cloud--two {
+    top: 20px;
+    right: max(3%, calc(50% - 460px));
+    width: 116px;
+  }
+
+  .header-scene__hills,
+  .header-scene__ground {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--scene-height);
+  }
+
+  .header-scene__tree {
+    bottom: 6px;
+    left: max(1%, calc(50% - 540px));
+    width: 180px;
+  }
+
+  .header-scene__tree--small {
+    left: auto;
+    right: max(2%, calc(50% - 560px));
+    width: 112px;
+  }
+
+  /* Walking in from the right, towards the title */
+  .header-scene__herd {
+    bottom: 8px;
+    left: min(calc(50% + 160px), calc(100% - 230px));
+    width: 210px;
+    transform: scaleX(-1);
   }
 
   .site-header .site-title {
@@ -828,8 +896,19 @@
     scroll-margin-top: 10rem;
   }
 
+  /* Not enough room beside the herd for a second tree */
+  @media (max-width: 1100px) {
+    .header-scene__tree--small { display: none; }
+  }
+
   @media (max-width: 600px) {
+    .site-header { --scene-height: 84px; }
     .site-header .site-title { font-size: 2.2rem; }
+    .header-scene__sun { top: -10px; left: -10px; width: 64px; }
+    .header-scene__cloud--one { display: none; }
+    .header-scene__cloud--two { top: 8px; width: 72px; }
+    .header-scene__tree { left: -24px; width: 130px; }
+    .header-scene__herd { left: auto; right: 3%; width: 150px; }
     .page-title { font-size: 2rem; }
     .site-nav { position: static; } /* a wrapped nav would cover too much of a small screen */
     .site-nav a { padding: 0.4rem 0.8rem; font-size: 0.9rem; }

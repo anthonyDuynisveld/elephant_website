@@ -1,0 +1,80 @@
+<%# Savanna behind the site title: a sun and clouds in the sky, and hills along the
+    bottom whose front edge is the nav's green, so the nav reads as the ground. A
+    mother and calf walk across, the calf holding her tail, drawn in Ellie's colours
+    (see _mascot.html.erb). Purely decorative; positioned in application.tailwind.css. %>
+<div class="header-scene" aria-hidden="true">
+  <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- elephant facing right, feet on y=88; trunk and tusks are added per animal -->
+      <g id="scene-elephant">
+        <path d="M14 40 C8 46 8 54 6 60" fill="none" stroke="#868c93" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="6" cy="62" rx="2.6" ry="3.6" fill="#6f757b"/>
+        <rect x="22" y="52" width="12" height="36" rx="5" fill="#868c93"/>
+        <rect x="64" y="52" width="12" height="36" rx="5" fill="#868c93"/>
+        <ellipse cx="50" cy="44" rx="38" ry="26" fill="#9aa0a6"/>
+        <rect x="31" y="56" width="13" height="32" rx="5" fill="#9aa0a6"/>
+        <rect x="73" y="56" width="13" height="32" rx="5" fill="#9aa0a6"/>
+        <circle cx="92" cy="34" r="18" fill="#9aa0a6"/>
+        <ellipse cx="82" cy="38" rx="12" ry="16" fill="#868c93"/>
+        <ellipse cx="83" cy="39" rx="7.5" ry="11" fill="#e8b4b8"/>
+        <circle cx="99" cy="30" r="2.4" fill="#1a1a1a"/>
+        <circle cx="99.8" cy="29.2" r="0.8" fill="#fff"/>
+        <circle cx="101" cy="39" r="3" fill="#e8b4b8" opacity="0.7"/>
+      </g>
+
+      <!-- flat-topped acacia, base on y=88 -->
+      <g id="scene-acacia">
+        <path d="M70 88 C71 74 68 62 58 48" fill="none" stroke="#6d4c41" stroke-width="6" stroke-linecap="round"/>
+        <path d="M69 70 C75 60 82 52 92 44" fill="none" stroke="#6d4c41" stroke-width="4" stroke-linecap="round"/>
+        <path d="M62 54 C56 50 48 47 40 44" fill="none" stroke="#6d4c41" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="70" cy="38" rx="62" ry="10" fill="#4f8a2b"/>
+        <ellipse cx="46" cy="32" rx="32" ry="9" fill="#5e9c35"/>
+        <ellipse cx="94" cy="31" rx="34" ry="9" fill="#5e9c35"/>
+        <ellipse cx="70" cy="27" rx="30" ry="7" fill="#6fae3f"/>
+      </g>
+
+      <g id="scene-cloud" fill="#fff">
+        <circle cx="24" cy="24" r="13"/>
+        <circle cx="42" cy="17" r="16"/>
+        <circle cx="60" cy="25" r="12"/>
+        <rect x="10" y="24" width="62" height="13" rx="6.5"/>
+      </g>
+    </defs>
+  </svg>
+
+  <svg class="header-scene__sun" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M72 40H78M62.6 62.6L66.9 66.9M40 72V78M17.4 62.6L13.1 66.9M8 40H2M17.4 17.4L13.1 13.1M40 8V2M62.6 17.4L66.9 13.1"
+          stroke="#ffd54f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="26" fill="#ffd54f"/>
+  </svg>
+  <svg class="header-scene__cloud header-scene__cloud--one" viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg"><use href="#scene-cloud"/></svg>
+  <svg class="header-scene__cloud header-scene__cloud--two" viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg"><use href="#scene-cloud"/></svg>
+
+  <svg class="header-scene__hills" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 62C160 34 330 30 500 52C640 70 760 64 900 44C1060 22 1260 30 1440 56V120H0Z" fill="#a5d6a7"/>
+    <path d="M0 88C220 70 420 74 620 84C820 94 1000 72 1220 74C1330 75 1400 80 1440 84V120H0Z" fill="#66bb6a"/>
+  </svg>
+
+  <svg class="header-scene__tree" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg"><use href="#scene-acacia"/></svg>
+  <svg class="header-scene__tree header-scene__tree--small" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg"><use href="#scene-acacia"/></svg>
+
+  <svg class="header-scene__herd" viewBox="0 0 196 90" xmlns="http://www.w3.org/2000/svg">
+    <!-- calf, holding mum's tail with its trunk -->
+    <g transform="translate(2 37) scale(0.58)">
+      <use href="#scene-elephant"/>
+      <path d="M105 40C112 36 120 38 127 43" fill="none" stroke="#868c93" stroke-width="12" stroke-linecap="round"/>
+      <path d="M105 40C112 36 120 38 127 43" fill="none" stroke="#9aa0a6" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <!-- mum -->
+    <g transform="translate(70 0)">
+      <use href="#scene-elephant"/>
+      <path d="M105 40C113 52 110 70 117 78" fill="none" stroke="#868c93" stroke-width="12" stroke-linecap="round"/>
+      <path d="M105 40C113 52 110 70 117 78" fill="none" stroke="#9aa0a6" stroke-width="9" stroke-linecap="round"/>
+      <path d="M101 48C104 55 109 57 113 55" fill="none" stroke="#fdf6e3" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <svg class="header-scene__ground" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 104C240 96 480 96 720 100C960 104 1200 96 1440 100V120H0Z" fill="#2e7d32"/>
+  </svg>
+</div>
