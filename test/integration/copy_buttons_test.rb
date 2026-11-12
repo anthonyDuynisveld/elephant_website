@@ -16,9 +16,17 @@ class CopyButtonsTest < ActionDispatch::IntegrationTest
 
     get body_and_food_path
     assert_dom ".copy[data-copy-image-value*='anatomy-skeleton']"
+    assert_dom ".copy[data-copy-image-value*='gallery/mud-bath'] button[aria-label='Copy picture: Mud bath']"
+  end
 
-    photo = GalleryPhoto.all.first
-    get gallery_path(photo)
-    assert_dom ".copy[data-copy-image-value*='#{photo.slug}'] button[aria-label='Copy picture: #{photo.title}']"
+  test "old photo links land on the page showing that photo" do
+    GalleryPhoto.all.each do |photo|
+      get "/gallery/#{photo.slug}"
+      assert_redirected_to photo.page
+
+      follow_redirect!
+      assert_dom ".copy[data-copy-image-value*='gallery/#{photo.slug}'] button[aria-label='Copy picture: #{photo.title}']",
+                 { count: 1 }, "Expected #{photo.slug} on #{photo.page}"
+    end
   end
 end

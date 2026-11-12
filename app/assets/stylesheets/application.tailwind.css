@@ -293,6 +293,23 @@
     box-shadow: var(--shadow-card-hover);
   }
 
+  /* Lifted cards keep an invisible strip under them, so a cursor at the bottom edge stays
+     "over" the card instead of the card lifting away, dropping back and flickering (and
+     flicking Ellie's fact bubble on and off) */
+  .card,
+  .stat-card,
+  .kid-card {
+    position: relative;
+  }
+
+  .card:hover::before,
+  .stat-card:hover::before,
+  .kid-card:hover::before {
+    content: "";
+    position: absolute;
+    inset: 100% 0 -8px 0;
+  }
+
   .card-icon {
     font-size: 3rem;
     line-height: 1;
