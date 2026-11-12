@@ -8,9 +8,10 @@
   <ul class="resource-list">
     <% ImageCredit.all.each do |credit| %>
       <li>
-        <%= link_to "#{credit.source} ↗", credit.url, target: "_blank", rel: "noopener", class: "text-link" %>
+        <strong><%= credit.about %></strong>
         <span class="resource-blurb">
-          By <%= credit.author %>, <%= link_to credit.license, credit.license_url, target: "_blank", rel: "noopener", class: "text-link" %>
+          By <%= credit.author %>, <%= link_to credit.license, credit.license_url, target: "_blank", rel: "noopener", class: "text-link" %>.
+          <%= link_to "See the original on Wikimedia Commons ↗", credit.url, target: "_blank", rel: "noopener", class: "text-link" %>
         </span>
       </li>
     <% end %>

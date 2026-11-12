@@ -15,7 +15,7 @@ class ImageCreditsTest < ActionDispatch::IntegrationTest
   end
 
   test "pages with pictures show the credit" do
-    [ body_and_food_path, life_in_the_wild_path, classification_path ].each do |path|
+    [ root_path, body_and_food_path, life_in_the_wild_path, classification_path ].each do |path|
       get path
       assert_dom ".image-credit a", { minimum: 1 }, "Expected a credit on #{path}"
     end

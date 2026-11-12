@@ -542,8 +542,22 @@
   }
 
   .image-credit {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
     margin: 0.4rem 0 0;
+  }
+
+  /* Inside a photo card: line up with the caption above and sit quietly under it */
+  .photo-block .image-credit {
+    margin: 0;
+    padding: 0 1.5rem 1rem;
+    background: var(--color-surface);
+  }
+
+  .image-credit .text-link {
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
   }
 
   .resource-blurb {
