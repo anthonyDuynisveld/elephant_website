@@ -11,10 +11,12 @@ const MIN_SPRAY_MS = 450        // trunk stays up at least this long, even on a 
 const SPRAY_INTERVAL_MS = 45
 const DROPS_PER_BURST = 3
 
-// Where the raised trunk tip sits inside the 48px icon (SVG viewBox 64 -> 48px)
-const TRUNK_TIP = { x: 10.5, y: 8 }
-// Hotspot = resting trunk tip, so clicks land where the trunk points
-const HOTSPOT = { x: 6, y: 37.5 }
+// Hotspot = tip of the pointer arrow in the top-left corner, so clicks land exactly where it points
+const HOTSPOT = { x: 1, y: 1 }
+// The elephant sits behind the arrow at this offset (keep in sync with .elephant-cursor__elephant)
+const ELEPHANT_OFFSET = { x: 9, y: 11 }
+// Where the raised trunk tip sits: inside the 48px elephant (SVG viewBox 64 -> 48px), plus its offset
+const TRUNK_TIP = { x: ELEPHANT_OFFSET.x + 10.5, y: ELEPHANT_OFFSET.y + 8 }
 
 // Remember the last position so the cursor doesn't flash at 0,0 after a Turbo visit
 let lastPosition = null

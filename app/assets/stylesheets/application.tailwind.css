@@ -930,8 +930,8 @@
   top: 0;
   left: 0;
   z-index: 9999;
-  width: 48px;
-  height: 48px;
+  width: 57px;  /* elephant (48px) + its offset behind the arrow */
+  height: 59px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s ease;
@@ -942,16 +942,36 @@
   opacity: 1;
 }
 
+.elephant-cursor__art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: scale 0.15s ease;
+  transform-origin: 1px 1px; /* arrow tip (the hotspot), so hover growth doesn't shift the aim point */
+}
+
+.elephant-cursor.is-over-link .elephant-cursor__art {
+  scale: 1.15;
+}
+
 .elephant-cursor svg {
+  position: absolute;
   display: block;
   overflow: visible;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
-  transition: scale 0.15s ease;
-  transform-origin: 6px 37.5px; /* hotspot, so hover growth doesn't shift the aim point */
 }
 
-.elephant-cursor.is-over-link svg {
-  scale: 1.15;
+/* Arrow sits on top in the corner; the elephant tucks in behind and below it
+   (offset kept in sync with ELEPHANT_OFFSET in the controller) */
+.elephant-cursor__arrow {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.elephant-cursor__elephant {
+  top: 11px;
+  left: 9px;
 }
 
 /* Trunk pivots at its base on the face (SVG user-space coordinates) */
@@ -978,7 +998,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .elephant-cursor__trunk,
-  .elephant-cursor svg {
+  .elephant-cursor__art {
     transition: none;
   }
 
