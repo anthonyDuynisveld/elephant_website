@@ -475,19 +475,6 @@
     margin: 0;
   }
 
-  .submit-section {
-    background: #e8f5e9;
-    border: 3px dashed var(--color-forest);
-    border-radius: var(--radius-card);
-    padding: 2.5rem;
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-
-  .submit-section h3 {
-    font-size: 1.5rem;
-  }
-
   .pager {
     display: flex;
     justify-content: space-between;

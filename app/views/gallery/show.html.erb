@@ -16,10 +16,6 @@
   <p class="page-subtitle"><%= @photo.description %></p>
 </div>
 
-<div class="highlight-box">
-  <p><strong>Got a great elephant photo?</strong> <%= link_to "Find out how a grown-up can share it", gallery_index_path(anchor: "submit"), class: "text-link" %>.</p>
-</div>
-
 <nav class="pager">
   <div>
     <% if @previous_photo %>
