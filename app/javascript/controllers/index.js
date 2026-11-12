@@ -21,3 +21,6 @@ application.register("hover-video", HoverVideoController)
 
 import TabsController from "./tabs_controller"
 application.register("tabs", TabsController)
+
+import CopyController from "./copy_controller"
+application.register("copy", CopyController)

@@ -10,6 +10,7 @@
         There are two kinds of African elephants. Savanna elephants live on wide, grassy plains in more than 20 countries,
         like Kenya, Tanzania and Botswana. Forest elephants live in thick rainforests in countries like Gabon and Cameroon.
       </p>
+      <%= copy_button "Africa" %>
     </div>
     <div class="card" data-mascot-fact="Asian elephants once ranged from the Middle East to China. Today they live in only about 15% of that area.">
       <h3>Asia</h3>
@@ -17,11 +18,15 @@
         Asian elephants live in forests and grasslands in 13 countries, like India, Sri Lanka and Thailand, and on the
         islands of Sumatra and Borneo. More than half of all wild Asian elephants live in India.
       </p>
+      <%= copy_button "Asia" %>
     </div>
   </div>
   <figure class="photo-block">
     <%= image_tag "pages/habitat-range-map.png", alt: "Map of Africa and Asia showing the former and current ranges of African and Asian elephants", class: "photo-block-image" %>
-    <figcaption>A map of where elephants live today.</figcaption>
+    <figcaption>
+      <span>A map of where elephants live today.</span>
+      <%= copy_picture_button "pages/habitat-range-map.png", "map of where elephants live" %>
+    </figcaption>
   </figure>
 </div>
 
@@ -34,6 +39,7 @@
         No! Elephants don't live in holes. But they do dig. They use their feet, trunks and tusks to dig for water in dry
         riverbeds, and to dig up salty soil to eat.
       </span>
+      <%= copy_button "In the ground?" %>
     </li>
     <li data-mascot-fact="Some elephants rub against a favourite &#x27;rubbing tree&#x27; so often that the bark gets polished smooth.">
       <span class="fact-label">In a tree?</span>
@@ -41,6 +47,7 @@
         No way! Elephants are far too heavy to climb. But trees are still useful. Elephants eat the leaves, rest in the
         shade and scratch their backs on the bark. Sometimes they push a tree over to reach the tasty leaves at the top.
       </span>
+      <%= copy_button "In a tree?" %>
     </li>
   </ul>
 </div>
@@ -51,22 +58,27 @@
     <li data-mascot-fact="Elephants are strong swimmers. Asian elephants have been seen swimming several kilometres between islands.">
       <span class="fact-label">Water every day</span>
       <span class="fact-value">Elephants drink, bathe and wallow daily, so they rarely stray far from rivers, lakes or watering holes.</span>
+      <%= copy_button "Water every day" %>
     </li>
     <li data-mascot-fact="All that eating means an elephant can leave around 100 kg of dung a day, which fertilises the soil.">
       <span class="fact-label">Lots of vegetation</span>
       <span class="fact-value">An adult eats over 100 kg of plants a day, so it needs large areas of grass, shrubs and trees.</span>
+      <%= copy_button "Lots of vegetation" %>
     </li>
     <li data-mascot-fact="On hot days elephants rest in the shade around midday and do most of their travelling in the cool morning, evening and night.">
       <span class="fact-label">Shade</span>
       <span class="fact-value">Trees and forest cover help elephants stay cool during the hottest part of the day.</span>
+      <%= copy_button "Shade" %>
     </li>
     <li data-mascot-fact="When food and water are scarce, some elephants travel more than 50 km in a single day.">
       <span class="fact-label">Space to move</span>
       <span class="fact-value">Herds follow the seasons, travelling between wet- and dry-season feeding grounds along routes called corridors.</span>
+      <%= copy_button "Space to move" %>
     </li>
     <li data-mascot-fact="In Kitum Cave on Kenya&#x27;s Mount Elgon, elephants walk deep into the dark at night to scrape salt from the walls with their tusks.">
       <span class="fact-label">Minerals</span>
       <span class="fact-value">Salt licks and mineral-rich soils add nutrients that plants alone don't provide.</span>
+      <%= copy_button "Minerals" %>
     </li>
   </ul>
 </div>
@@ -79,12 +91,14 @@
       <em>home range</em>. The family walks around it all year. Where there's lots of food and water, a home range can be
       smaller than a big city. In dry deserts, it can be as big as a small country!
     </p>
+    <%= copy_button "Where do elephants make their home?" %>
   </div>
   <div class="highlight-box">
     <p>
       <strong>Did you know?</strong> Each elephant family is led by a grandma elephant called the <em>matriarch</em>.
       When it hasn't rained for a long time, she remembers where to find water. Her family depends on her!
     </p>
+    <%= copy_button "Did you know?" %>
   </div>
 </div>
 
@@ -94,14 +108,17 @@
     <div class="card" data-mascot-fact="Desert-adapted elephants in Namibia can go several days without drinking.">
       <h3>Many landscapes</h3>
       <p>Savannas, grasslands, rainforests, swamps, mountain forests and even deserts.</p>
+      <%= copy_button "Many landscapes" %>
     </div>
     <div class="card" data-mascot-fact="The holes elephants dig for water become drinking spots for zebras, antelope and birds in the dry season.">
       <h3>Ecosystem engineers</h3>
       <p>By clearing trees, digging waterholes and spreading seeds in their dung, elephants shape the land for other animals.</p>
+      <%= copy_button "Ecosystem engineers" %>
     </div>
     <div class="card" data-mascot-fact="Wildlife corridors help elephants cross farmland and roads safely. Kenya even built an elephant underpass beneath a highway near Mount Kenya.">
       <h3>Shrinking space</h3>
       <p>Habitat loss from farming and development is one of the biggest threats elephants face today.</p>
+      <%= copy_button "Shrinking space" %>
     </div>
   </div>
 </div>

@@ -8,7 +8,10 @@
   <% else %>
     <%= render "shared/image_placeholder" %>
   <% end %>
-  <figcaption><%= @photo.caption %></figcaption>
+  <figcaption>
+    <span><%= @photo.caption %></span>
+    <%= copy_picture_button @photo.poster_path, @photo.title if @photo.poster_path %>
+  </figcaption>
 </figure>
 
 <div class="section">
