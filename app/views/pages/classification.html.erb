@@ -4,36 +4,6 @@
              "Let's find out where elephants fit!" %>
 
 <div class="section">
-  <h2>How scientists sort elephants</h2>
-  <p>Each group is smaller than the one before it. Scientists give every group a Latin name.</p>
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th>Group</th>
-        <th>Science name</th>
-        <th>What it means</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% [
-        ["Kingdom", "Animalia", "All animals"],
-        ["Phylum", "Chordata", "Animals with a spinal cord (a bundle of nerves down the back), like fish, birds and you"],
-        ["Class", "Mammalia", "Mammals: animals with hair that feed their babies milk"],
-        ["Order", "Proboscidea", "Animals with a trunk"],
-        ["Family", "Elephantidae", "Elephants and mammoths"],
-        ["Genus", "Loxodonta and Elephas", "African elephants and Asian elephants"]
-      ].each do |rank, name, meaning| %>
-        <tr>
-          <th><%= rank %></th>
-          <td><em><%= name %></em></td>
-          <td><%= meaning %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-<div class="section">
   <h2>Three kinds of elephants</h2>
   <p>
     There are three species (kinds) of elephant alive today. All three are <strong>endangered</strong>. That means so few
@@ -66,6 +36,18 @@
 </div>
 
 <div class="section">
+  <h2>Elephant cousins and surprises</h2>
+  <div class="info-block" data-mascot-fact="The earliest relatives of elephants lived around 60 million years ago and were smaller than a dog.">
+    <p><strong>Proboscidea</strong> comes from the Greek word for "trunk". The order once had dozens of species, including woolly mammoths and mastodons.</p>
+    <p><strong>Loxodonta</strong> means "slanted tooth", after the lozenge-shaped ridges on African elephants' molars.</p>
+    <p>The closest living relatives of elephants are <strong>manatees, dugongs and hyraxes</strong>.</p>
+  </div>
+  <div class="highlight-box" data-mascot-fact="Woolly mammoths survived on Wrangel Island until about 4,000 years ago, after the Great Pyramid of Giza was built!">
+    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.</p>
+  </div>
+</div>
+
+<div class="section">
   <h2>Kinds of Asian elephant</h2>
   <p>
     Scientists split Asian elephants into smaller groups called subspecies. Each one lives in a different place.
@@ -92,13 +74,31 @@
 </div>
 
 <div class="section">
-  <h2>More classification details</h2>
-  <div class="info-block" data-mascot-fact="The earliest relatives of elephants lived around 60 million years ago and were smaller than a dog.">
-    <p><strong>Proboscidea</strong> comes from the Greek word for "trunk". The order once had dozens of species, including woolly mammoths and mastodons.</p>
-    <p><strong>Loxodonta</strong> means "slanted tooth", after the lozenge-shaped ridges on African elephants' molars.</p>
-    <p>The closest living relatives of elephants are <strong>manatees, dugongs and hyraxes</strong>.</p>
-  </div>
-  <div class="highlight-box" data-mascot-fact="Woolly mammoths survived on Wrangel Island until about 4,000 years ago, after the Great Pyramid of Giza was built!">
-    <p><strong>Surprising fact:</strong> DNA studies show that the Asian elephant is more closely related to the extinct woolly mammoth than to African elephants.</p>
-  </div>
+  <h2>How scientists sort elephants</h2>
+  <p>Each group is smaller than the one before it. Scientists give every group a Latin name. This table is handy for your project report!</p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Group</th>
+        <th>Science name</th>
+        <th>What it means</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% [
+        ["Kingdom", "Animalia", "All animals"],
+        ["Phylum", "Chordata", "Animals with a spinal cord (a bundle of nerves down the back), like fish, birds and you"],
+        ["Class", "Mammalia", "Mammals: animals with hair that feed their babies milk"],
+        ["Order", "Proboscidea", "Animals with a trunk"],
+        ["Family", "Elephantidae", "Elephants and mammoths"],
+        ["Genus", "Loxodonta and Elephas", "African elephants and Asian elephants"]
+      ].each do |rank, name, meaning| %>
+        <tr>
+          <th><%= rank %></th>
+          <td><em><%= name %></em></td>
+          <td><%= meaning %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
